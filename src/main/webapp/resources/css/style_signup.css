@@ -1,0 +1,145 @@
+/*css cho container xếp một hàng ngang ở giữa màn hình*/
+body{
+    background-color: #f5f5f5;
+}
+.header h1{
+    text-align: center;
+    font-size: 25px;
+    color: #000;
+    /*in đậm*/
+    font-weight: bold;
+    /*đổi font chữ*/
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 100px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    height: 250px;
+}
+.line{
+    width: 2px;
+    height: 220px;
+    background-color: #CCCCCC;
+    margin: 0 40px;
+}
+
+.google{
+    width: 400px;
+    height: 40px;
+    background-color: #EEEEEE;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+    margin: 20px auto;
+}
+/*css cho ảnh google*/
+.google img{
+    width: 20px;
+    height: 20px;
+    margin: 10px 100px 10px 10px;
+}
+/*css cho chữ login with google*/
+.google span{
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+    /*đổi font chữ*/
+    font-family: Arial, Helvetica, sans-serif;
+}
+.google a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.form{
+    width: 400px;
+    margin-bottom: 10px;
+}
+.form label{
+    display: block;
+    margin-bottom: 5px;
+    /*in đậm*/
+    font-weight: bold;
+    /*đổi font chữ*/
+    font-family: Arial, Helvetica, sans-serif;
+}
+.form input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+/*hiệu ứng*/
+.form input:focus{
+    outline: none;
+    border: 1px solid #0066FF;
+}
+.form button{
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0066FF;
+    color: #fff;
+    /*in đậm*/
+    font-weight: bold;
+}
+/*hiệu ứng*/
+.form button:hover{
+    background-color: #0052cc;
+    cursor: pointer;
+}
+.forgot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 900px;
+    margin: 0 0 0 400px;
+}
+.k1{
+    width: 60%;
+    margin: 50px 0 0 -100px;
+}
+.k1 p{
+    font-size: 19px;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.k1 a{
+    text-decoration: none;
+    color: #0066FF;
+    font-size: 19px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.k1 .p2{
+    font-size: 17px;
+    color: #000;
+    /*khoảng cách các dòng*/
+    line-height: 25px;
+    /*nhạt màu*/
+    opacity: 0.65;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.k2-2{
+    width: 100%;
+    height: 200px;
+    background-color: #f5f5f5;
+    margin: 0 0 20px 0;
+}
+.k2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+.k2 a{
+    text-decoration: none;
+    color: #0066FF;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 0 20px 50px;
+}
