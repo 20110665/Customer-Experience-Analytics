@@ -29,7 +29,10 @@
 	href="${URL}styles/main_styles.css">
 <link rel="stylesheet" type="text/css"
 	href="${URL}styles/responsive.css">
-<link rel="stylesheet" type="text/css" href="${URL1}styles.css">
+<link rel="stylesheet" type="text/css" 
+	href="${URL1}styles.css">
+
+
 </head>
 <body>
 

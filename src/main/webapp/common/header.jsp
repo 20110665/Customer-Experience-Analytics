@@ -14,7 +14,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-						<div class="top_nav_left">See how Digital Engagement enables you to meet your customers where they are</div>
+						<div class="top_nav_left">See how Digital Engagement enables
+							you to meet your customers where they are</div>
 					</div>
 					<div class="col-md-6 text-right">
 						<div class="top_nav_right">
@@ -80,8 +81,8 @@
 								<li><a href="#">Feedback Flows</a></li>
 							</ul>
 							<ul class="navbar_user">
-								<li><a href="#"><i class="fa fa-search"
-										aria-hidden="true"></i></a></li>
+								<!-- <li><a href="#"><i class="fa fa-search"
+										aria-hidden="true"></i></a></li> -->
 								<li><a href="#"><i class="fa fa-user"
 										aria-hidden="true"></i></a></li>
 								<!--Cate -->
@@ -99,7 +100,7 @@
 								</c:if> --%>
 
 							</ul>
-							
+
 							<div class="hamburger_container">
 								<i class="fa fa-bars" aria-hidden="true"></i>
 							</div>
@@ -110,6 +111,6 @@
 		</div>
 
 	</header>
-	</div>
+</div>
 
 
