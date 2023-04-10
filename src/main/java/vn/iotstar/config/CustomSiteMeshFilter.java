@@ -11,8 +11,14 @@ public class CustomSiteMeshFilter extends ConfigurableSiteMeshFilter{
 	protected void applyCustomConfiguration(SiteMeshFilterBuilder builder) {
 		super.applyCustomConfiguration(builder);
 		builder.addDecoratorPath("/", "/decorators/home.jsp")
-		.addDecoratorPath("/login", "/decorators/login.jsp")
-		.addDecoratorPath("/signup", "/decorators/signup.jsp");
+		.addDecoratorPath("/history", "/decorators/callhistory.jsp")
+		.addDecoratorPath("/history/*", "/decorators/callhistory.jsp")
+		.addDecoratorPath("/live", "/decorators/live.jsp")
+		.addDecoratorPath("/inbound", "/decorators/inbound.jsp")
+		.addDecoratorPath("/contact", "/decorators/contact.jsp")
+		.addDecoratorPath("/report", "/decorators/live.jsp")
+		.addDecoratorPath("/report/*", "/decorators/inbound.jsp")
+		.addDecoratorPath("/report/*", "/decorators/live.jsp");
 	}
 	
 }
