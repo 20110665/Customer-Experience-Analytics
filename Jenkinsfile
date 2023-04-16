@@ -1,10 +1,6 @@
 pipeline {
     agent any
     
-    tools {
-        maven 'Maven 3.6.3'
-    }
-    
     environment {
     	DOCKER_IMAGE = "20110665/cae2"
     	DOCKER_TAG = "1.0"
