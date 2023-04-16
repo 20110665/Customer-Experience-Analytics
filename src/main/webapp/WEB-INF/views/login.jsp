@@ -15,7 +15,7 @@
         </div>
         <!--khung nhập email và mật khẩu-->
         <div class="form">
-            <form action="#" method="post">
+            <form action="/loginAct" method="post">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="Email">
                 <div class="forgot">
