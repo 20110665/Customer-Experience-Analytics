@@ -3,37 +3,36 @@
 <%@ include file="/common/taglib.jsp"%>
   <body>
     <div id="wraper">
-      <div id="header">
-        <div class="abc">
+      <div class="container">
+      	<div class="abc">
             <h3>Inbound Call Metrics</h3>
           </div>
-      </div>
-      <div class="container">
         <div class="Matrics">
           <div>
-            <h3>2098</h3>
+            <h3 class="h3Matrics">2098</h3>
             <p>Total Calls</p>
           </div>
           <div>
-            <h3>123</h3>
+            <h3 class="h3Matrics">1590</h3>
             <p>Answered Calls</p>
           </div>
           <div>
-            <h3>356</h3>
+            <h3 class="h3Matrics">1934</h3>
             <p>Missed Calls</p>
           </div>
           <div>
-            <h3>124</h3>
+            <h3 class="h3Matrics">587</h3>
             <p>Abandoned Calls</p>
           </div>
           <div>
-            <h3>320</h3>
+            <h3 class="h3Matrics">1098</h3>
             <p>Short Abandoned Calls</p>
           </div>
           <div>
-            <h3>25</h3>
+            <h3 class="h3Matrics">985</h3>
             <p>Voicemalls</p>
           </div>
+        </div>
         </div>
       </div>
       <div class="container">
