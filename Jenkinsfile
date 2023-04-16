@@ -1,6 +1,11 @@
 pipeline {
     agent any
     
+    tools {
+        // Thêm đường dẫn đến Maven vào môi trường
+        maven 'Maven 3.9.1'
+    }
+    
     environment {
     	DOCKER_IMAGE = "20110665/cae2"
     	DOCKER_TAG = "1.0"
