@@ -1,10 +1,11 @@
-
 .content{
-    max-width: 1000px;
-    height: 500px;
+    max-width: 1200px;
+    height: 600px;
+    margin-left: 200px;
     margin: 0px auto;
     display: flex;
     gap: 10px;
+    /* background-color: #87c2cb; */
     text-align: center;
 }
 .content1{
@@ -12,11 +13,13 @@
     height: 500px;
     font-size: 35px;
     text-align: center;
+    /* background-color: aqua; */
 }
 #pictureHome{
     background-size: cover;
     background-position: center;
     margin-top: 200px;
+    /* background-color: bisque; */
 }
 .content2{
     margin-top: 200px;
@@ -24,8 +27,6 @@
 }
 .Button{
     display: flex;
-    /* justify-content: center; */
-    /* align-items: center; */
     height: 100px;
     width: 500px;
     gap: 20px;
@@ -41,6 +42,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px auto;
 }
 .Button1{
     border-radius: 20px;
@@ -48,7 +50,8 @@
     border: none;
     color: white;
     text-decoration: none;
-    text-align: center;
+    /* text-align: center; */
+    margin: 20px 20px;
 }
 .Button2{
     border-radius: 20px;
@@ -59,7 +62,7 @@
 }
 .footer{
     color: #FFFFFF;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0px auto;
     height: 400px;
     padding: 5px;
@@ -73,8 +76,7 @@
     font-size: 30px;
 }
 .footer-menu{
-    /* display: flex; */
-    width: 200px;
+    width: 240px;
     height: 300px;
     list-style: none;
     text-decoration: none;

@@ -7,16 +7,13 @@
       <!-- page1 -->
       <div class="content">
         <div class="content1">
-          <h2 style="margin-top: 50px">
+          <h2 style="margin-top: 100px; margin-left: 50px; font-size: 45px;">
             Customer Experience Analytics to give actionable insights to your
             call center team.
           </h2>
           <div class="Button">
             <div class="btn-item">
-              <a class="Button1" href="">WATCH VIDEO</a>
-            </div>
-            <div class="btn-item">
-              <a class="Button2" href="">REQUEST DEMO</a>
+              <a class="Button1" href="/report">WATCH REPORT</a>
             </div>
           </div>
         </div>
@@ -26,8 +23,8 @@
             ><img
               src="https://infra-cloudfront-talkdeskcom.svc.talkdeskapp.com/talkdesk_com/2021/04/14022946/Analytics-Insights-man-device-870x580.png"
               alt="pictureHome"
-              width="500px"
-              height="500px"
+              width="700px"
+              height="600px"
           /></a>
         </div>
       </div>
@@ -39,13 +36,13 @@
             ><img
               src="https://infra-cloudfront-talkdeskcom.svc.talkdeskapp.com/talkdesk_com/turn-real-time-analytics-into-great-customer-service-435x290.png"
               alt="pictureHome"
-              width="500px"
-              height="500px"
+              width="700px"
+              height="600px"
           /></a>
         </div>
         <br />
         <div class="content1">
-          <h2 style="margin-top: 110px; font-size: 40px; padding-right: 50px">
+          <h2 style="margin-top: 150px; font-size: 40px; padding-right: 50px">
             Turn real-time analytics into great customer service.
           </h2>
           <div>
@@ -89,8 +86,8 @@
             ><img
               src="https://infra-cloudfront-talkdeskcom.svc.talkdeskapp.com/talkdesk_com/%E2%80%8B%E2%80%8Bturn-historical-data-into-great-performance-435x290.png"
               alt="pictureHome"
-              width="500px"
-              height="500px"
+              width="700px"
+              height="600px"
           /></a>
         </div>
       </div>
@@ -102,8 +99,8 @@
             ><img
               src="https://infra-cloudfront-talkdeskcom.svc.talkdeskapp.com/talkdesk_com/2021/04/09130451/speech-analytics-drive-customer-centric-decisions-435x290.png"
               alt="pictureHome"
-              width="500px"
-              height="500px"
+              width="700px"
+              height="600px"
           /></a>
         </div>
         <br />
@@ -154,8 +151,8 @@
             ><img
               src="https://infra-cloudfront-talkdeskcom.svc.talkdeskapp.com/talkdesk_com/turn-customer-feedback-into-customer-satisfaction-435x290.png"
               alt="pictureHome"
-              width="500px"
-              height="500px"
+              width="700px"
+              height="600px"
           /></a>
         </div>
       </div>
