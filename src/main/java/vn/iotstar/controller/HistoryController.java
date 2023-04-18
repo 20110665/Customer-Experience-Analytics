@@ -35,4 +35,12 @@ public class HistoryController {
 	public String showRPInbound() {
 		return "inbound";
 	}
+	@GetMapping("/")
+	public String showHome() {
+		return "home";
+	}
+	@GetMapping("/report/servicelevel")
+	public String showServicelevel() {
+		return "servicelevel";
+	}
 }

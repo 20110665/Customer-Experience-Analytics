@@ -24,7 +24,7 @@
                 </div>
                 <input type="password" name="password" id="password" placeholder="Password">
                 <div class="submit">
-                    <button type="submit">Login</button>
+                    <button href "/" type="submit">Login</button>
                 </div>
             </form>
         </div>

@@ -3,14 +3,14 @@
 <%@ include file="/common/taglib.jsp"%>
 
 <div id="headertitle">
-	<h3>
+	<h3 class="h3header">
 	  See how Digital Engagement enables you to meet your customers where
 	  they are.
 	</h3>
 </div>
 <div id="header">
 	<nav class="container">
-	  <a href="" id="logo"
+	  <a href="/" id="logo"
 		><img
 		  src="https://prd-cdn-talkdesk.talkdesk.com/cdn-assets/latest/talkdesk/brand/main_brand/logo/talkdesk_logo_purple.svg"
 		  alt="Talkdesk"

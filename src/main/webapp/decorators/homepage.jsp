@@ -5,15 +5,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8" />
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="${URL1}css/inbound.css" />
+    <link rel="stylesheet" href="${URL1}css/home.css" />
     <link rel="stylesheet" href="${URL1}css/header.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-    <title>Inbound</title>
-    
+    <title>Home Page</title>
+
 <!-- Site meta -->
+<title>Home</title>
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +25,7 @@
 <body>
 
 	<%@ include file="/common/header.jsp"%>
-	<%@ include file="/common/header2.jsp"%>
+
 
 
 

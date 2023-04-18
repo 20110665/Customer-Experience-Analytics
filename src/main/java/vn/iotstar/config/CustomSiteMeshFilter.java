@@ -10,16 +10,19 @@ public class CustomSiteMeshFilter extends ConfigurableSiteMeshFilter{
 	@Override
 	protected void applyCustomConfiguration(SiteMeshFilterBuilder builder) {
 		super.applyCustomConfiguration(builder);
-		builder.addDecoratorPath("/", "/decorators/home.jsp")
+		builder.addDecoratorPath("/", "/decorators/homepage.jsp")
 		.addDecoratorPath("/history", "/decorators/callhistory.jsp")
 		.addDecoratorPath("/history/*", "/decorators/callhistory.jsp")
-		.addDecoratorPath("/live", "/decorators/live.jsp")
+		.addDecoratorPath("/report/live", "/decorators/live.jsp")
 		.addDecoratorPath("/inbound", "/decorators/inbound.jsp")
 		.addDecoratorPath("/contact", "/decorators/contact.jsp")
 		.addDecoratorPath("/report", "/decorators/live.jsp")
 		.addDecoratorPath("/report/*", "/decorators/inbound.jsp")
 		.addDecoratorPath("/report/*", "/decorators/live.jsp")
-		.addDecoratorPath("/login", "/decorators/login.jsp");
+		.addDecoratorPath("/home", "/decorators/homepage.jsp")
+		.addDecoratorPath("/login", "/decorators/login.jsp")
+		.addDecoratorPath("/signup", "/decorators/signup.jsp")
+		.addDecoratorPath("/report/servicelevel", "/decorators/servicelevel.jsp");
 	}
 	
 }
