@@ -22,6 +22,7 @@ pipeline {
             steps {
                 sh 'java -version'
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                    sh 'docker login --username 20110665 --password 12082002kT@'
                     sh 'mvn clean install'
                 }
             }
