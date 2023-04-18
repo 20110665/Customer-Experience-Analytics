@@ -35,7 +35,7 @@ public class HistoryController {
 	public String showRPInbound() {
 		return "inbound";
 	}
-	@GetMapping("/home")
+	@GetMapping("/")
 	public String showHome() {
 		return "home";
 	}

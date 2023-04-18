@@ -10,7 +10,7 @@
 </div>
 <div id="header">
 	<nav class="container">
-	  <a href="/home" id="logo"
+	  <a href="/" id="logo"
 		><img
 		  src="https://prd-cdn-talkdesk.talkdesk.com/cdn-assets/latest/talkdesk/brand/main_brand/logo/talkdesk_logo_purple.svg"
 		  alt="Talkdesk"
