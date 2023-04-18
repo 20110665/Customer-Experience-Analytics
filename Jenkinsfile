@@ -11,7 +11,10 @@ pipeline {
     	DOCKER_TAG = "1.0"
     }
     
-    stage("Login to docker"){
+    
+    
+    stages {
+        stage("Login to docker"){
         steps{
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh 'docker login --username DOCKER_USERNAME --password DOCKER_PASSWORD'
@@ -23,8 +26,7 @@ pipeline {
             sh 'docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}'
         }
     }
-    
-    stages {
+        
         stage('Checkout') {
             steps {
                 git url: 'https://github.com/20110665/Customer-Experience-Analytics', branch: 'main'
