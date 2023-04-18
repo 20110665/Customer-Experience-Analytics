@@ -11,6 +11,19 @@ pipeline {
     	DOCKER_TAG = "1.0"
     }
     
+    stage("Login to docker"){
+        steps{
+                withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                    sh 'docker login --username DOCKER_USERNAME --password DOCKER_PASSWORD'
+                }
+             }
+        }
+    stage("Delete ole image"){
+        steps{
+            sh 'docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}'
+        }
+    }
+    
     stages {
         stage('Checkout') {
             steps {
@@ -21,32 +34,14 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'java -version'
-                withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-                    sh 'docker login --username 20110665 --password 12082002kT@'
-                    sh 'mvn clean install'
-                }
+                sh 'mvn clean install'
             }
         }
         
-        /*stage("build") {
-            agent { node {label 'master'}}
-            environment {
-                DOCKER_TAG="${GIT_BRANCH.tokenize('/').pop()}-${GIT_COMMIT.substring(0,7)}"
-            }
+        stage("Deploy"){
             steps {
-                sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} . "
-                sh "docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:latest"
-                sh "docker image ls | grep ${DOCKER_IMAGE}"
-                withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-                    sh 'echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin'
-                    sh "docker push ${DOCKER_IMAGE}:${DOCKER_TAG}"
-                    sh "docker push ${DOCKER_IMAGE}:latest"
-                }
-
-            //clean to save disk
-            sh "docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}"
-            sh "docker image rm ${DOCKER_IMAGE}:latest"
-      	    }
-        }*/
+                sh 'docker run -p 80:4000 --name customer-experience-analytics 20110665/cae2:1.0'
+            }
+        }
     }
 }
