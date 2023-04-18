@@ -25,5 +25,6 @@ public class LoginController {
 				return new ModelAndView("redirect:/", model);
 			}
 			return new ModelAndView("redirect:/", model);
+			
 	}
 }
