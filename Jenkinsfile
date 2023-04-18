@@ -20,7 +20,7 @@ pipeline {
         
         stage('Build') {
             steps {
-                sh 'java -version']
+                sh 'java -version'
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh 'mvn clean install'
                 }
