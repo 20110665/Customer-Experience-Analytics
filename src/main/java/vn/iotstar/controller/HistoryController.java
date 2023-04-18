@@ -39,4 +39,8 @@ public class HistoryController {
 	public String showHome() {
 		return "home";
 	}
+	@GetMapping("/report/servicelevel")
+	public String showServicelevel() {
+		return "servicelevel";
+	}
 }
