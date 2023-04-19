@@ -2,7 +2,7 @@
           <u id="main-menu">
             <li class="active"><a href="/live">Live</a></li>
             <li><a href="/inbound">Inbound</a></li>
-            <li><a href="">Service Level</a></li>
+            <li><a href="/servicelevel">Service Level</a></li>
             <li><a href="">Outbound</a></li>
             <li><a href="">Agents</a></li>
             <li><a href="">Numbers</a></li>
