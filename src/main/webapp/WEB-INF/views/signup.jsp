@@ -35,7 +35,7 @@
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" placeholder="Password">
                 <div class="submit">
-                    <button type="submit">Sign up</button>
+                    <button type="submit"><a style="color: #FFF;" href="login">Sign up</a></button>
                 </div>
             </form>
         </div>

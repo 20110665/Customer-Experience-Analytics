@@ -20,7 +20,13 @@
 		<li><a href="/contact">CONTACT</a></li>
 		<li><a href="/report">REPORT</a></li>
 		<li><a href="/feedback">FEEDBACK</a></li>
-		<li><a href="/profile">ManagementProfile</a></li>
+		<a style="
+              font-size: 18px;
+              margin-top: 18px;
+              color: #A49F9F;
+              text-decoration: none;
+              " href="login">Logout</a>
+		<!-- <li><a href="">ManagementProfile</a></li> -->
 	  </u>
 	</nav>
   </div>
