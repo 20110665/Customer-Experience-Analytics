@@ -48,6 +48,8 @@ public class Agent {
 	@Column(columnDefinition = "nvarchar(100)")
 	private String email;
 	
+	private String password;
+	
 	//0: user, 1: manager, and more ...
 	private Integer role;
 	

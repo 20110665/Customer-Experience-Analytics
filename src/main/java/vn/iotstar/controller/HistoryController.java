@@ -15,7 +15,7 @@ public class HistoryController {
 	public String showCallhistoryDetail() {
 		return "callhistorydetail";
 	}
-	@GetMapping("/live")
+	@GetMapping("/report/live")
 	public String showLive() {
 		return "live";
 	}
@@ -29,7 +29,7 @@ public class HistoryController {
 	}
 	@GetMapping("/report")
 	public String showReport() {
-		return "live";
+		return "redirect:/report/live";
 	}
 	@GetMapping("/report/inbound")
 	public String showRPInbound() {

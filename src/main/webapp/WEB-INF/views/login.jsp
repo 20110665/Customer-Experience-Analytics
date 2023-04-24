@@ -11,7 +11,7 @@
             <h1 class="logo1">talkdesk</h1>
             <h1 class="logoenter">Enter your credentials to login</h1>
             <!-- css logo ở giữa-->
-                     
+            <p>"${message}"</p>         
         </div>
         <!--khung nhập email và mật khẩu-->
         <div class="form">

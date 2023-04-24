@@ -1,7 +1,7 @@
 <nav class="container">
           <u id="main-menu">
-            <li class="active"><a href="/live">Live</a></li>
-            <li><a href="/inbound">Inbound</a></li>
+            <li class="active"><a href="/report/live">Live</a></li>
+            <li><a href="/report/inbound">Inbound</a></li>
             <li><a href="/report/servicelevel">Service Level</a></li>
             <li><a href="">Outbound</a></li>
             <li><a href="">Agents</a></li>
