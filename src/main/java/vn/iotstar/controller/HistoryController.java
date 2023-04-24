@@ -43,4 +43,8 @@ public class HistoryController {
 	public String showServicelevel() {
 		return "servicelevel";
 	}
+	@GetMapping("/dashboard")
+	public String showRPDashboard() {
+		return "dashboard";
+	}
 }
