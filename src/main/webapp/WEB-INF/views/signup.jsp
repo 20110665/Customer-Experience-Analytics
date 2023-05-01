@@ -7,53 +7,87 @@
         <h1>Sign up to Talkdesk, Inc.</h1>
     </div>
     <div class="container">
-        <div class="sign-in-with">
-            <div class="google">
-                <a href="#">
-                    <img src="images/twitter.png" alt="google">
-                    <span>Sign up with Twitter</span>
-                </a>
-            </div>
-            <div class="google">
-                <a href="#">
-                    <img src="images/facebook.png" alt="google">
-                    <span>Sign up with Facebook</span>
-                </a>
-            </div>
-            <div class="google">
-                <a href="#">
-                    <img src="images/google.png" alt="google">
-                    <span>Sign up with Google</span>
-                </a>
-            </div>
-        </div>
-        <div class="line"></div>
+        
+
         <div class="form">
             <form action="" method="post">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Email">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="Password">
+                <label for="fullname">Full Name</label>
+                <input type="text" name="fullname" id="fullname" placeholder="fullname" required>
+
+                <label for="phonenumber">Phone Number</label>
+                <input type="tel" name="phonenumber" id="phonenumber" placeholder="phonenumber" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+
+                  
+                <div class="password-container">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <div class="eye" id="eye-icon"></div>
+                </div>
+        
+                <label for="Confirmpassword">Confirm Password</label>
+                <input type="password" name="Confirmpassword" id="Confirmpassword" placeholder="Confirm password" required>
                 <div class="submit">
-                    <button type="submit"><a style="color: #FFF;" href="login">Sign up</a></button>
+                    <button type="submit">Sign in</button>
                 </div>
             </form>
         </div>
+
+        <!--
+        <script>
+	        const form = document.querySelector('form');
+	        const password = document.querySelector('#password');
+	        const confirm = document.querySelector('#Confirmpassword');
+	
+	        form.addEventListener('submit', function(event) {
+	        if (password.value !== confirm.value) {
+	            event.preventDefault(); // ngăn chặn sự kiện submit
+	            alert('Password and Confirm Password do not match!');
+	        }
+	        });	
         
+            const eyeIcon = document.getElementById('eye-icon');
+            const passwordInput = document.getElementById('password');
+
+            eyeIcon.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.style.backgroundImage = `url(images/eye${type === 'password' ? '1' : '2'}.png)`;
+            });
+
+            passwordInput.addEventListener('input', function(event) {
+                eyeIcon.style.backgroundImage = 'url(images/eye1.png)';
+            });
+        </script>
+        
+        <script>
+            const phoneNumberInput = document.getElementById('phonenumber');
+          
+            phoneNumberInput.addEventListener('input', function(event) {
+              const phoneNumberRegex = /^0[0-9]{9}$/;
+              const phoneNumber = event.target.value;
+          
+              if (!phoneNumberRegex.test(phoneNumber)) {
+                phoneNumberInput.setCustomValidity('Invalid phone number format. Please enter a valid phone number.');
+              } else {
+                phoneNumberInput.setCustomValidity('');
+              }
+            });
+        </script>
+         -->
+        
+
     </div>
     <div class="forgot">
         <div class="k1">
-            <p>New to talkdesk, Inc.? <a href="login">Sign up</a></p>
-            <p>Have you emailed us? <a href="login">Get a password</a></p>
+            <p>Login to talkdesk, Inc.? <a href="login">Login</a></p>
             <p class="p2">If you've communicated with our support staff through email previously,
                 you're alraedy registered. You probably don't have a password yet,
                 through.
             </p>
-        </div>
-        <div class="k2">
-            <a href="login">I am an Agent</a>
-            <a href="login">Forgot my password</a>
-            <div class="k2-2"></div>
-        </div>
+        </div> 
     </div>
+    
 </body>
