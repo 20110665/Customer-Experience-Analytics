@@ -23,7 +23,10 @@ public class CustomSiteMeshFilter extends ConfigurableSiteMeshFilter{
 		.addDecoratorPath("/login", "/decorators/login.jsp")
 		.addDecoratorPath("/signup", "/decorators/signup.jsp")
 		.addDecoratorPath("/servicelevel", "/decorators/servicelevel.jsp")
-		.addDecoratorPath("/dashboard", "/decorators/dashboard.jsp");
+		.addDecoratorPath("/dashboard", "/decorators/dashboard.jsp")
+		.addDecoratorPath("/outbound", "/decorators/outbound.jsp")
+		.addDecoratorPath("/agent", "/decorators/agent.jsp")
+		.addDecoratorPath("/call", "/decorators/call.jsp");
 	}
 	
 }

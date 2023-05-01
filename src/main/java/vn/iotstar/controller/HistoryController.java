@@ -47,4 +47,16 @@ public class HistoryController {
 	public String showRPDashboard() {
 		return "dashboard";
 	}
+	@GetMapping("/outbound")
+	public String showRPOutbound() {
+		return "outbound";
+	}
+	@GetMapping("/agent")
+	public String showRPAgent() {
+		return "agent";
+	}
+	@GetMapping("/call")
+	public String showRPCalls() {
+		return "call";
+	}
 }

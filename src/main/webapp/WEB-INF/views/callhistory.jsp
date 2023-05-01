@@ -6,11 +6,9 @@
     <div id="wraper">
       <div class="Search">
         <form>
-          <input class="input_find" type="text" placeholder="Tìm kiếm" />
-          <button class="btn_find" type="submit">Find</button>
+          <input id="input" class="input_find" type="text" onkeyup="tabelSearch()" placeholder="Find phone number..." />
         </form>
       </div>
-      <br>
       <br>
       <!-- create table callhistory -->
       <div class="tabel-call-history">
@@ -118,15 +116,6 @@
     </div>
   </body>
   <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
-  <script>
-    $(document).ready(function () {
-      $("#main-menu li").removeClass("active");
-      $("#main-menu li").click(function () {
-        $("#main-menu li").removeClass("active");
-        $(this).addClass("active");
-        return false;
-      });
-    });
-  </script>
+
   
 
