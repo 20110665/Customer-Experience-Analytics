@@ -35,15 +35,14 @@
             </form>
         </div>
 
-        <!--
-        <script>
+        <script type="text/javascript">
 	        const form = document.querySelector('form');
 	        const password = document.querySelector('#password');
 	        const confirm = document.querySelector('#Confirmpassword');
 	
 	        form.addEventListener('submit', function(event) {
 	        if (password.value !== confirm.value) {
-	            event.preventDefault(); // ngăn chặn sự kiện submit
+	            event.preventDefault();
 	            alert('Password and Confirm Password do not match!');
 	        }
 	        });	
@@ -54,15 +53,17 @@
             eyeIcon.addEventListener('click', function() {
                 const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
                 passwordInput.setAttribute('type', type);
-                this.style.backgroundImage = `url(images/eye${type === 'password' ? '1' : '2'}.png)`;
+                if (type === 'password') {
+                	this.style.backgroundImage = 'url(images/eye1.png)';
+                } else {
+                	this.style.backgroundImage = 'url(images/eye2.png)';
+                }
             });
 
             passwordInput.addEventListener('input', function(event) {
                 eyeIcon.style.backgroundImage = 'url(images/eye1.png)';
             });
-        </script>
-        
-        <script>
+
             const phoneNumberInput = document.getElementById('phonenumber');
           
             phoneNumberInput.addEventListener('input', function(event) {
@@ -76,9 +77,7 @@
               }
             });
         </script>
-         -->
         
-
     </div>
     <div class="forgot">
         <div class="k1">

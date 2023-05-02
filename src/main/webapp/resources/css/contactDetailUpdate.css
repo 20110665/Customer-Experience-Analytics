@@ -1,27 +1,31 @@
-.Search {
+.back {
 	position: absolute;
-	left: 60%;
-	padding: 10px;
+	top: 0;
+	left: 0;
+	margin: 20px;
 }
 
-.input_find {
-	width: 300px;
-	height: 40px;
-	background: #FFFFFF;
-	border: 1px solid #9747FF;
-	box-sizing: border-box;
-	border-radius: 20px;
-	font-size: 16px;
-	padding: 20px;
+.back a {
+	text-decoration: none;
+	color: #4a47a3;
+	font-size: 25px;
+}
+
+.back a img {
+	width: 25px;
+	height: 25px;
+	margin-right: 10px;
 }
 
 .tabel-call-history {
-	width: 100%;
+	width: 610px;
 	font-size: 16px;
 	font-family: Arial, Helvetica, sans-serif;
 	max-width: 1000px;
 	margin: 0px auto;
 	padding-top: 60px;
+	/*di chuyển qua trái 1 xíu*/
+	margin-left: 170px;
 }
 
 table {
@@ -50,35 +54,9 @@ th, td {
 	color: #FFFFFF;
 }
 
-.btn {
-	display: inline-block;
-	/*di chuyển cả 2 qua phải 1 xíu*/
-	margin-left: 20px;
-	margin-top: 20px;
+.form-update {
+	padding-top: 87px;
 }
-
-#btn-edit {
-	width: 100px;
-	height: 30px;
-	background-color: #4CAF50;
-	color: white;
-	margin-left: 920px;
-	border-radius: 5px;
-	border: none;
-	cursor: pointer;
-}
-
-#btn-delete {
-	width: 100px;
-	height: 30px;
-	background-color: #f44336;
-	color: white;
-	margin-right: 20px;
-	border-radius: 5px;
-	border: none;
-	cursor: pointer;
-}
-
 /*xếp 8 thẻ input trong form thành 1 hàng dọc*/
 .form-update input {
 	display: block;
@@ -93,14 +71,8 @@ th, td {
 	padding-left: 10px;
 }
 /*viền input màu đen cho thẻ input feed_back*/
-.form-update input[name="feed_back"] {
+.form-update input[name="company"] {
 	border-bottom-width: 1px;
-}
-.form-update input[name="id"] {
-	background-color: #fff;
-}
-.form-update input[name="call_content"] {
-	background-color: #fff;
 }
 /*đặt form nằm bên phải của bảng*/
 .form-update {
@@ -118,28 +90,8 @@ th, td {
 	height: 30px;
 	background-color: #4CAF50;
 	color: white;
-	margin-left: 480px;
+	margin-left: 500px;
 	border-radius: 5px;
 	border: none;
 	cursor: pointer;
-}
-
-.back {
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin: 20px;
-	margin-top: 110px;
-}
-
-.back a {
-	text-decoration: none;
-	color: #4a47a3;
-	font-size: 25px;
-}
-
-.back a img {
-	width: 25px;
-	height: 25px;
-	margin-right: 10px;
 }

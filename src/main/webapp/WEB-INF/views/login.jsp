@@ -17,12 +17,12 @@
         <div class="form">
             <form action="/loginAct" method="post">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Email">
+                <input type="email" name="email" id="email" placeholder="Email" required>
                 <div class="forgot">
                     <label for="password">Password</label>
                     <a href="#">Forgot password?</a>
                 </div>
-                <input type="password" name="password" id="password" placeholder="Password">
+                <input type="password" name="password" id="password" placeholder="Password" required>
                 <div class="submit">
                     <button href "/" type="submit">Login</button>
                 </div>
