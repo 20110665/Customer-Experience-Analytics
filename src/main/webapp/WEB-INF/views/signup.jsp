@@ -4,7 +4,7 @@
 
 <body>
     <div class="header">
-        <h1>Sign up to Talkdesk, Inc.</h1>
+        <h1>Sign up to <a href="/">Talkdesk</a>, Inc.</h1>
     </div>
     <div class="container">
         <div class="sign-in-with">

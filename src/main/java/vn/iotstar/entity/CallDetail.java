@@ -39,12 +39,18 @@ public class CallDetail {
 	private String typeCall;
 	
 	@Temporal(TemporalType.TIME)
-	@DateTimeFormat(pattern = "hh:mi:ss")
+	@DateTimeFormat(pattern = "hh:mi:ss.S")
 	private Date timeOnQueue;
 	
 	@Temporal(TemporalType.TIME)
-	@DateTimeFormat(pattern = "hh:mi:ss")
+	@DateTimeFormat(pattern = "hh:mi:ss.S")
 	private Date timeAbandoned;
+	
+	@Temporal(TemporalType.TIME)
+	@DateTimeFormat(pattern = "hh:mi:ss.S")
+	private Date waitTime;
+	
+	private float serviceLevel;
 	
 	@Column(columnDefinition = "nvarchar(255)")
 	private String callContent;

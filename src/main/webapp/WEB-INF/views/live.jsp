@@ -21,7 +21,7 @@
                 datasets: [
                   {
                     label: "# of Votes",
-                    data: [90, 10],
+                    data: [${serviceLevel}, 100 - ${serviceLevel}],
                     backgroundColor: [
                       // "red", "green", "blue"
                       "rgba(46, 204, 113, 1)",
@@ -54,7 +54,7 @@
                   ctx.fillStyle = "black";
                   ctx.textAlign = "center";
                   ctx.fillText(
-                    "90",
+                    ${serviceLevel},
                     left + width / 2,
                     (top + height + 70) / 2
                   );

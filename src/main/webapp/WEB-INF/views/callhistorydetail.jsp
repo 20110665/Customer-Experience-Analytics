@@ -3,50 +3,53 @@
 <%@ include file="/common/taglib.jsp"%>
 
 <body>
-    <div id="wraper">
-      <!--<div class="Search">
+	<div id="wraper">
+		<!--<div class="Search">
         <form>
           <input class="input_find" type="text" placeholder="Tìm kiếm" />
           <button class="btn_find" type="submit">Find</button>
         </form>
       </div>-->
-      <!-- create table callhistory -->
-      <div class="tabel-call-history">
-        <table>
-          <tr>
-            <td>ID</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>Call ID</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>Type Call</td>
-            <td>Complant</td>
-          </tr>
-          <tr>
-            <td>Time On Phone</td>
-            <td>12:30</td>
-          </tr>
-          <tr>
-            <td>Time On Queue</td>
-            <td>00:30</td>
-          </tr>
-          <tr>
-            <td>Time abandoned</td>
-            <td>01:00</td>
-          </tr>
-          <tr>
-            <td>Call Content</td>
-            <td><button id="play">PLAY</button></td>
-          </tr>
-          <tr>
-            <td>Feed Back</td>
-            <td>True</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </body>
+		<!-- create table callhistory -->
+		<div class="tabel-call-history">
+			<table>
+				<tr>
+					<td>ID</td>
+					<td>${callDetail.id }</td>
+				</tr>
+				<tr>
+					<td>Call ID</td>
+					<td>${callDetail.call.id }</td>
+				</tr>
+				<tr>
+					<td>Type Call</td>
+					<td>${callDetail.typeCall }</td>
+				</tr>
+				<tr>
+					<td>Time On Queue</td>
+					<td>${callDetail.timeOnQueue }</td>
+				</tr>
+				<tr>
+					<td>Time abandoned</td>
+					<td>${callDetail.timeAbandoned }</td>
+				</tr>
+				<tr>
+					<td>Wait Time</td>
+					<td>${callDetail.waitTime }</td>
+				</tr>
+				<tr>
+					<td>Call Content</td>
+					<td><audio controls>
+							<source src="${callDetail.callContent }" type="audio/mpeg">
+							Your browser does not support the audio element.
+						</audio></td>
+				</tr>
+				<tr>
+					<td>Feed Back</td>
+					<td>${callDetail.feedBackDetail.feedBackContent }</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
 
