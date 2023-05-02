@@ -164,10 +164,16 @@ public class HistoryController {
 	public String showRPDashboard() {
 		return "dashboard";
 	}
-	
-	private double serviceLevel(List<CallDetail> callDetailList) {
-		
-		
-		return 0.1;
+	@GetMapping("/report/outbound")
+	public String showRPOutbound() {
+		return "outbound";
+	}
+	@GetMapping("/report/agent")
+	public String showRPAgent() {
+		return "agent";
+	}
+	@GetMapping("/report/call")
+	public String showRPCalls() {
+		return "call";
 	}
 }

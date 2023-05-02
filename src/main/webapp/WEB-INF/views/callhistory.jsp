@@ -6,11 +6,11 @@
 	<div id="wraper">
 		<div class="Search">
 			<form>
-				<input class="input_find" type="text" placeholder="Tìm kiếm" />
-				<button class="btn_find" type="submit">Find</button>
+				<input id="input" class="input_find" type="text"
+					onkeyup="tabelSearch()" placeholder="Find phone number..." />
 			</form>
 		</div>
-		<br> <br>
+		<br>
 		<!-- create table callhistory -->
 		<div class="tabel-call-history">
 			<table>
@@ -53,5 +53,4 @@
 		});
 	});
 </script>
-
 
