@@ -1,6 +1,7 @@
 package vn.iotstar.controller;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -52,11 +53,12 @@ public class HistoryController {
 	@GetMapping("/report/live")
 	public String showLive(ModelMap model) {
 		List<CallDetail> callDetailList = callDetailRepository.findAll();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
 		Long avgAbandonTime = 0L;
 		Long avgTimeOneQueue = 0L;
 		Long avgWaitTime = 0L;
-		Long longestWaitTime = 0L;
+		Long longestWaitTime = callDetailList.get(0).getWaitTime().getTime();
 		double avgServiceLevel = 0;
 		DecimalFormat df = new DecimalFormat("#.##");
 		
@@ -69,10 +71,10 @@ public class HistoryController {
 			}
 			avgServiceLevel += callDetail.getServiceLevel();
 		}
-		model.addAttribute("serviceLevel", df.format(avgServiceLevel * 100));
-		model.addAttribute("avgAbandonTime", new Date(avgAbandonTime/callDetailList.size()));
-		model.addAttribute("longestWaitTime", new Date(longestWaitTime));
-		model.addAttribute("avgWaitTime", new Date(avgWaitTime/callDetailList.size()));
+		model.addAttribute("serviceLevel", df.format(avgServiceLevel * 100 / callDetailList.size()));
+		model.addAttribute("avgAbandonTime", dateFormat.format(new Date(avgAbandonTime/callDetailList.size())));
+		model.addAttribute("longestWaitTime", dateFormat.format(new Date(longestWaitTime)));
+		model.addAttribute("avgWaitTime", dateFormat.format(new Date(avgWaitTime/callDetailList.size())));
 		return "live";
 	}
 	@GetMapping("/contact")
@@ -152,16 +154,128 @@ public class HistoryController {
 		
 		return count;
 	}
+	
+	private Double avgServiceLevel(int i, List<Call> callList) {
+		Double avgSL = 0.0;
+		Integer count = 0;
+		for (Call call : callList) {
+			if (call.getCreateAt().getMonth() == i) {
+				avgSL += call.getCallDetail().getServiceLevel();
+				count ++;
+			}
+		}
+		return (Double) avgSL/count;
+	}
 	@GetMapping("/")
 	public String showHome() {
 		return "home";
 	}
 	@GetMapping("/report/servicelevel")
-	public String showServicelevel() {
+	public String showServicelevel(ModelMap model) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+		DecimalFormat df = new DecimalFormat("#.##");
+		
+		List<Call> callList = callRepository.findAll();
+		
+		Double serviceLevel = 0.0;
+		Long abandonTime = 0L;
+		Long longestAbandonTime = callList.get(0).getCallDetail().getTimeAbandoned().getTime();
+		Long waitTime = 0L;
+		Long longestWaitTime = callList.get(0).getCallDetail().getWaitTime().getTime();
+		Long totalDuration = 0L;
+		Long longestDuration = callList.get(0).getCallDetail().getTimeOnQueue().getTime();
+
+		int maxMonth = 1;
+		
+		for (Call call : callList) {
+			if (call.getCreateAt().getMonth() > maxMonth) {
+				maxMonth = call.getCreateAt().getMonth();
+			}
+			//tinh tong service level
+			serviceLevel += call.getCallDetail().getServiceLevel();
+			//tim logestabandontime
+			if (call.getCallDetail().getTimeAbandoned().getTime() > longestAbandonTime) {
+				longestAbandonTime = call.getCallDetail().getTimeAbandoned().getTime();
+			}
+			//tinh sum abandontime
+			abandonTime += call.getCallDetail().getTimeAbandoned().getTime();
+			
+			//tinh longestwaittime
+			if (call.getCallDetail().getWaitTime().getTime() > longestWaitTime) {
+				longestWaitTime = call.getCallDetail().getWaitTime().getTime();
+			}
+			//tinh sum waittime
+			waitTime += call.getCallDetail().getWaitTime().getTime();
+			//tinh total duration
+			totalDuration = call.getCallDetail().getTimeOnQueue().getTime();
+			if (call.getCallDetail().getTimeOnQueue().getTime() > longestDuration) {
+				longestDuration = call.getCallDetail().getTimeOnQueue().getTime();
+			}
+		}
+		
+		List<String> monthList = new ArrayList<>();
+		for (int i = 0; i < maxMonth; i++) {
+			monthList.add("Tháng " + String.valueOf(i + 1));
+		}
+		
+		List<Double> values = new ArrayList<>();
+		int startMonth = 1;
+		for (String month : monthList) {
+			values.add(avgServiceLevel(startMonth, callList));
+			startMonth++;
+		}
+		Gson gSon = new Gson();
+		
+		String labelsJson = gSon.toJson(monthList);
+		
+		model.addAttribute("values", values);
+		model.addAttribute("labels", labelsJson);
+		model.addAttribute("serviceLevel", df.format(serviceLevel * 100 / callList.size()));
+		model.addAttribute("avgAbandonTime", dateFormat.format(new Date(abandonTime/callList.size())));
+		model.addAttribute("longestAbandonTime", dateFormat.format(new Date(longestAbandonTime)));
+		model.addAttribute("avgWaitTime", dateFormat.format(new Date(waitTime/callList.size())));
+		model.addAttribute("longestWaitTime", dateFormat.format(new Date(longestWaitTime)));
+		model.addAttribute("totalDuration", dateFormat.format(new Date(totalDuration)));
+		model.addAttribute("avgDuration", dateFormat.format(new Date(totalDuration/callList.size())));
+		model.addAttribute("longestDuration", dateFormat.format(new Date(longestDuration)));
+		
 		return "servicelevel";
 	}
 	@GetMapping("/report/dashboard")
-	public String showRPDashboard() {
+	public String showRPDashboard(ModelMap model) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+
+		List<Call> callList = callRepository.findAll();
+		List<Call> nowCallList = new ArrayList<>();
+		Long avgWaitTime = 0L;
+		double serviceLevel = 0;
+		Integer callResponseCount = 0;
+		Integer callAbandondCount = 0;
+		DecimalFormat df = new DecimalFormat("#.##");
+		Date now = new Date(System.currentTimeMillis());
+		
+		for (Call call: callList) {
+			if (call.getCreateAt().getHours() == now.getHours()) {
+				nowCallList.add(call);
+			}
+			
+			avgWaitTime += call.getCallDetail().getWaitTime().getTime();
+		}
+		for (Call c : nowCallList) {
+			serviceLevel += c.getCallDetail().getServiceLevel();
+			if (c.getCallResponse() == true) {
+				callResponseCount++;
+			} else {
+				callAbandondCount++;
+			}
+		}
+		model.addAttribute("serviceLevel", df.format(serviceLevel * 100 / callList.size()));
+		model.addAttribute("nowCallList", nowCallList);
+		model.addAttribute("abandonRate", callResponseCount/callList.size());
+		model.addAttribute("avgHandleTime", dateFormat.format(new Date(avgWaitTime/callList.size())));
+		model.addAttribute("callResponse", callResponseCount);
+		model.addAttribute("callAbandon", callAbandondCount);
+		
 		return "dashboard";
 	}
 	@GetMapping("/report/outbound")

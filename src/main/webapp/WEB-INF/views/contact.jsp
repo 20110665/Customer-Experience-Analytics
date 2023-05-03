@@ -34,7 +34,7 @@
 				<tbody>
 					<c:forEach items="${customerList }" var="customer">
 						<tr>
-							<td><a href="/contact/${customer.id}">${customer.id}</a></td>
+							<td><a href="/contact/${customer.id}">${customer.name}</a></td>
 							<td>${customer.email}</td>
 							<td>${customer.phone}</td>
 							<td>${customer.address}</td>

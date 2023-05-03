@@ -2,7 +2,7 @@
 
 	<u id="main-menu">
 		<li class="active"><a href="/report/live">Live</a></li>
-		<li><a href="/report/dashboard">Live Dashboard</a></li>
+		<li><a href="/report/dashboard">Dashboard</a></li>
 		<li><a href="/report/inbound">Inbound</a></li>
 		<li><a href="/report/servicelevel">Service Level</a></li>
 		<li><a href="/report/outbound">Outbound</a></li>

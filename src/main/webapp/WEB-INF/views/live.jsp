@@ -1,20 +1,21 @@
- <%@ page language="java" contentType="text/html; charset=UTF-8"
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp"%>
-    <body>
-    <br>
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      <div class="Live">
-        <div class="service-list">
-          <div class="service-item">
-            <div class="service-content">
-              <h3 style="text-align: center">Service Levels</h3>
-              <p style="text-align: center; font-size: 20px">Today</p>
-            </div>
-            <div class="ChartLive">
-              <canvas id="myChart" width="230" height="230"></canvas>
-            </div>
-            <script>
+<body>
+	<br>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<div class="Live">
+		<div class="service-list">
+			<div class="service-item">
+				<div class="service-content">
+					<h3 style="text-align: center">Service Levels</h3>
+					<p style="text-align: center; font-size: 20px">Today</p>
+				</div>
+				<div class="ChartLive">
+					<canvas id="myChart" width="230" height="230"></canvas>
+				</div>
+				<script>
               //setup block
               const data = {
                 // labels: ["Red", "Green", "Blue"],
@@ -49,12 +50,12 @@
                   } = chart;
                   ctx.save();
 
-                  ctx.font = "55px sans-serif";
+                  ctx.font = "40px sans-serif";
                   ctx.textBaseline = "middle";
                   ctx.fillStyle = "black";
                   ctx.textAlign = "center";
                   ctx.fillText(
-                    ${serviceLevel},
+                	`${serviceLevel}%`,
                     left + width / 2,
                     (top + height + 70) / 2
                   );
@@ -73,43 +74,43 @@
                 config
               );
             </script>
-          </div>
-          <div class="service-item">
-            <div class="service-content">
-              <h3 style="text-align: center">Avg. Abandon Time</h3>
-              <p style="text-align: center; font-size: 20px">Today</p>
-              <p style="text-align: center; font-size: 50px">2:30</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-content">
-              <h3 style="text-align: center">Avg. Wait Time</h3>
-              <p style="text-align: center; font-size: 20px">Today</p>
-              <p style="text-align: center; font-size: 50px">2:50</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-content">
-              <h3 style="text-align: center">Longest Wait Time</h3>
-              <p style="text-align: center; font-size: 20px">Today</p>
-              <p style="text-align: center; font-size: 50px">5:00</p>
-            </div>
-          </div>
-        </div>
-        <br />
-        <div class="container">
-          <div class="service-agent">
-            <div class="item">
-              <div class="service-content">
-                <h3 style="text-align: center; font-size: 30px">Live Agent</h3>
-              </div>
-              <div class="content">
-                <p style="text-align: center; font-size: 30px">Today</p>
-              </div>
-              <div class="ChartLive2">
-                <canvas id="myChart2" width="200" height="200"></canvas>
-              </div>
-              <script>
+			</div>
+			<div class="service-item">
+				<div class="service-content">
+					<h3 style="text-align: center">Avg. Abandon Time</h3>
+					<p style="text-align: center; font-size: 20px">Today</p>
+					<p style="text-align: center; font-size: 50px">${avgAbandonTime }</p>
+				</div>
+			</div>
+			<div class="service-item">
+				<div class="service-content">
+					<h3 style="text-align: center">Avg. Wait Time</h3>
+					<p style="text-align: center; font-size: 20px">Today</p>
+					<p style="text-align: center; font-size: 50px">${avgWaitTime }</p>
+				</div>
+			</div>
+			<div class="service-item">
+				<div class="service-content">
+					<h3 style="text-align: center">Longest Wait Time</h3>
+					<p style="text-align: center; font-size: 20px">Today</p>
+					<p style="text-align: center; font-size: 50px">${longestWaitTime }</p>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="container">
+			<div class="service-agent">
+				<div class="item">
+					<div class="service-content">
+						<h3 style="text-align: center; font-size: 30px">Live Agent</h3>
+					</div>
+					<div class="content">
+						<p style="text-align: center; font-size: 30px">Today</p>
+					</div>
+					<div class="ChartLive2">
+						<canvas id="myChart2" width="200" height="200"></canvas>
+					</div>
+					<script>
                 //setup block
                 const data2 = {
                   // labels: ["Red", "Orange", "Green"],
@@ -165,18 +166,18 @@
                   config2
                 );
               </script>
-            </div>
-            <div class="item">
-              <div class="service-content">
-                <h3 style="text-align: center; font-size: 30px">Live Calls</h3>
-              </div>
-              <div class="content">
-                <p style="text-align: center; font-size: 30px">Today</p>
-              </div>
-              <div class="ChartLive2">
-                <canvas id="myChart3" width="200" height="200"></canvas>
-              </div>
-              <script>
+				</div>
+				<div class="item">
+					<div class="service-content">
+						<h3 style="text-align: center; font-size: 30px">Live Calls</h3>
+					</div>
+					<div class="content">
+						<p style="text-align: center; font-size: 30px">Today</p>
+					</div>
+					<div class="ChartLive2">
+						<canvas id="myChart3" width="200" height="200"></canvas>
+					</div>
+					<script>
                 //setup block
                 const data3 = {
                   // labels: ["Red", "Orange", "Green"],
@@ -234,15 +235,15 @@
                   config3
                 );
               </script>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-  </body>
-  <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
-  <script>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+<script>
     $(document).ready(function () {
       $("#main-menu li").removeClass("active");
       $("#main-menu li").click(function () {
