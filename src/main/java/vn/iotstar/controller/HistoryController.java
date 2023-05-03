@@ -77,16 +77,29 @@ public class HistoryController {
 		model.addAttribute("avgWaitTime", dateFormat.format(new Date(avgWaitTime/callDetailList.size())));
 		return "live";
 	}
+
 	@GetMapping("/contact")
 	public String showContact(ModelMap model) {
 		List<Customer> customerList = customerRepository.findAll();
 		model.addAttribute("customerList", customerList);
 		return "contact";
 	}
+
+	@GetMapping("/contact/1")
+	public String showContactDetail() {
+		return "contactDetail";
+	}
+
+	@GetMapping("/contact/1/update")
+	public String showContactDetailUpdate() {
+		return "contactDetailUpdate";
+	}
+
 	@GetMapping("/report")
 	public String showReport() {
 		return "redirect:/report/dashboard";
 	}
+
 	@GetMapping("/report/inbound")
 	public String showRPInbound(ModelMap model) {
 		int maxMonth = 1;
@@ -166,6 +179,7 @@ public class HistoryController {
 		}
 		return (Double) avgSL/count;
 	}
+
 	@GetMapping("/")
 	public String showHome() {
 		return "home";
@@ -287,6 +301,7 @@ public class HistoryController {
 		return "agent";
 	}
 	@GetMapping("/report/call")
+
 	public String showRPCalls() {
 		return "call";
 	}
