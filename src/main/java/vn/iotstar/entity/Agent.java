@@ -31,41 +31,43 @@ public class Agent {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	@Column(columnDefinition = "nvarchar(100)")
 	private String name;
-	
+
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "YYYY-MM-DD")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dob;
-	
+
 	@Column(columnDefinition = "varchar(20)")
 	private String phone;
-	
+
 	@Column(columnDefinition = "nvarchar(255)")
 	private String address;
-	
+
 	@Column(columnDefinition = "nvarchar(100)")
 	private String email;
-	
+
 	private String password;
-	
-	//0: user, 1: manager, and more ...
+
+	private Boolean isActivate;
+
+	// 0: user, 1: manager, and more ...
 	private Integer role;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "YYYY-MM-DD hh:mi:ss")
 	private Date createAt;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "YYYY-MM-DD hh:mi:ss")
 	private Date updateAt;
-	
-	//mapping to Call
+
+	// mapping to Call
 	@OneToMany(mappedBy = "agent")
 	List<Call> calls;
-	
-	//mapping to FeedBackDetail
+
+	// mapping to FeedBackDetail
 	@OneToMany(mappedBy = "agent")
 	List<FeedBackDetail> feedBackDetails;
 }

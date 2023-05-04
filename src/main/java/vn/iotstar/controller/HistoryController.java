@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import javax.servlet.http.HttpSession;
+
 import com.google.gson.Gson;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import vn.iotstar.entity.Agent;
 import vn.iotstar.entity.Call;
 import vn.iotstar.entity.CallDetail;
 import vn.iotstar.entity.Customer;
@@ -38,20 +41,40 @@ public class HistoryController {
 	@Autowired
 	private CallDetailRepository callDetailRepository;
 	
+	@Autowired
+	private HttpSession session;
+	
+	@GetMapping("/badRequest")
+	public String badRequest() {
+		return "badRequest";
+	}
+	
 	@GetMapping("/history")
 	public String showHomePage(ModelMap model) {
+		Agent user = (Agent) session.getAttribute("user");
+		if (user == null) {
+			return "redirect:/badRequest";
+		}
 		List<Call> callList = callRepository.findAll();
 		model.addAttribute("callList", callList);
 		return "callhistory";
 	}
 	@GetMapping("/history/{id}")
 	public String showCallhistoryDetail(ModelMap model, @PathVariable("id") Integer id) {
+		Agent user = (Agent) session.getAttribute("user");
+		if (user == null) {
+			return "redirect:/badRequest";
+		}
 		Optional<CallDetail> optCallDetail = callDetailRepository.findById(id);
 		model.addAttribute("callDetail", optCallDetail.get());
 		return "callhistorydetail";
 	}
 	@GetMapping("/report/live")
 	public String showLive(ModelMap model) {
+		Agent user = (Agent) session.getAttribute("user");
+		if (user == null) {
+			return "redirect:/badRequest";
+		}
 		List<CallDetail> callDetailList = callDetailRepository.findAll();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
@@ -80,6 +103,10 @@ public class HistoryController {
 
 	@GetMapping("/contact")
 	public String showContact(ModelMap model) {
+		Agent user = (Agent) session.getAttribute("user");
+		if (user == null) {
+			return "redirect:/badRequest";
+		}
 		List<Customer> customerList = customerRepository.findAll();
 		model.addAttribute("customerList", customerList);
 		return "contact";
@@ -97,11 +124,19 @@ public class HistoryController {
 
 	@GetMapping("/report")
 	public String showReport() {
+		Agent user = (Agent) session.getAttribute("user");
+		if (user == null) {
+			return "redirect:/badRequest";
+		}
 		return "redirect:/report/dashboard";
 	}
 
 	@GetMapping("/report/inbound")
 	public String showRPInbound(ModelMap model) {
+		Agent user = (Agent) session.getAttribute("user");
+		if (user == null) {
+			return "redirect:/badRequest";
+		}
 		int maxMonth = 1;
 		int totalCall = 0;
 		int answeredCall = 0;
@@ -158,6 +193,7 @@ public class HistoryController {
 		return "inbound";
 	}
 	private Integer callCount(int i, List<Call> callList) {
+		
 		int count = 0;
 		for (Call call : callList) {
 			if (call.getCreateAt().getMonth() == i) {
@@ -182,10 +218,15 @@ public class HistoryController {
 
 	@GetMapping("/")
 	public String showHome() {
+		
 		return "home";
 	}
 	@GetMapping("/report/servicelevel")
 	public String showServicelevel(ModelMap model) {
+		Agent user = (Agent) session.getAttribute("user");
+		if (user == null) {
+			return "redirect:/badRequest";
+		}
 		SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 		DecimalFormat df = new DecimalFormat("#.##");
 		
@@ -257,6 +298,10 @@ public class HistoryController {
 	}
 	@GetMapping("/report/dashboard")
 	public String showRPDashboard(ModelMap model) {
+		Agent user = (Agent) session.getAttribute("user");
+		if (user == null) {
+			return "redirect:/badRequest";
+		}
 		SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
 		List<Call> callList = callRepository.findAll();
@@ -294,15 +339,27 @@ public class HistoryController {
 	}
 	@GetMapping("/report/outbound")
 	public String showRPOutbound() {
+		Agent user = (Agent) session.getAttribute("user");
+		if (user == null) {
+			return "redirect:/badRequest";
+		}
 		return "outbound";
 	}
 	@GetMapping("/report/agent")
 	public String showRPAgent() {
+		Agent user = (Agent) session.getAttribute("user");
+		if (user == null) {
+			return "redirect:/badRequest";
+		}
 		return "agent";
 	}
 	@GetMapping("/report/call")
 
 	public String showRPCalls() {
+		Agent user = (Agent) session.getAttribute("user");
+		if (user == null) {
+			return "redirect:/badRequest";
+		}
 		return "call";
 	}
 }
