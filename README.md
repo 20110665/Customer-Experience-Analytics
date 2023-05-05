@@ -23,8 +23,7 @@ Customer Experience Analytics to give actionable insights to your call center te
 - java -version
 
 1.4. Install Jenkins
-- sudo wget -O /etc/yum.repos.d/jenkins.repo \
-    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+- sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 - sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 - sudo yum upgrade
 - sudo amazon-linux-extras install java-openjdk11 -y
