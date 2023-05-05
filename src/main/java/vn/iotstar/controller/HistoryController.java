@@ -65,7 +65,7 @@ public class HistoryController {
 		if (user == null) {
 			return "redirect:/badRequest";
 		}
-		Optional<CallDetail> optCallDetail = callDetailRepository.findById(id);
+		Optional<CallDetail> optCallDetail = callDetailRepository.findByCallId(id);
 		model.addAttribute("callDetail", optCallDetail.get());
 		return "callhistorydetail";
 	}
@@ -112,8 +112,8 @@ public class HistoryController {
 		return "contact";
 	}
 
-	@GetMapping("/contact/1")
-	public String showContactDetail() {
+	@GetMapping("/contact/{id}")
+	public String showContactDetail(ModelMap model) {
 		return "contactDetail";
 	}
 
