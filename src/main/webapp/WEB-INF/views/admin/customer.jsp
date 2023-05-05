@@ -86,7 +86,7 @@
 							<li
 								class="${customerPage.totalPages == customerPage.number + 1 ? 'page-item active' : 'page-item'}">
 								<a class="page-link"
-								href="<c:url value='/admin/customer?page=${categoryPage.totalPages-1}'/>">Last</a>
+								href="<c:url value='/admin/customer?page=${customerPage.totalPages-1}'/>">Last</a>
 							</li>
 						</ul>
 					</c:if>
