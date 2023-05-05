@@ -44,7 +44,7 @@ pipeline {
         
         stage("Deploy"){
             steps {
-                sh 'docker run -p 80:4000 --name customer-experience-analytics 20110665/cae2:1.0'
+                sh 'docker run -p 80:4000 --name customer-experience-analytics -d 20110665/cae2:1.0'
             }
         }
         //test jenkin file
