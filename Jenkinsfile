@@ -21,13 +21,13 @@ pipeline {
                 }
              }
         }
-    stage("Delete old container and image"){
-        steps{
-            sh 'docker stop customer-experience-analytics'
-            sh 'docker rm customer-experience-analytics'
-            sh 'docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}'
-        }
-    }
+//     stage("Delete old container and image"){
+//         steps{
+//             sh 'docker stop customer-experience-analytics'
+//             sh 'docker rm customer-experience-analytics'
+//             sh 'docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}'
+//         }
+//     }
         
         stage('Checkout') {
             steps {
@@ -47,6 +47,6 @@ pipeline {
                 sh 'docker run -p 80:4000 --name customer-experience-analytics 20110665/cae2:1.0'
             }
         }
-        //test jenkins file
+        //test jenkins file update
     }
 }
