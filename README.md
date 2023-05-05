@@ -43,3 +43,9 @@ Customer Experience Analytics to give actionable insights to your call center te
 - Config jenkins
 
 ### 4. Run demo 
+#### Tài khoản manager:
+- Email: brenhernandez215@gmail.com
+- Password: XHh9X139h2
+#### Tài khoản agent:
+- Email: nathan5@hotmail.com
+- Password: 6LEYwPDOT7
