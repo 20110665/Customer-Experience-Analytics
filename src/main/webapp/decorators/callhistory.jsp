@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="${URL1}css/callhistory.css" />
+    <link rel="stylesheet" href="${URL1}css/header.css" />
     <title>Call History</title>
 
 <!-- Site meta -->
@@ -42,4 +43,24 @@
 
 
 </body>
+<script type="application/javascript">
+    function tabelSearch(){
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("input");
+        filter = input.value.toUpperCase();
+        table = document.getElementsByClassName("tabel-call-history")[0];
+        tr = table.getElementsByTagName("tr");
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[3];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1){
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
+</script>
 </html>
