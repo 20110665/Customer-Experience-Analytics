@@ -10,9 +10,6 @@ pipeline {
     	DOCKER_IMAGE = "20110665/cae2"
     	DOCKER_TAG = "1.0"
     }
-    
-    
-    
     stages {
         stage("Login to docker"){
         steps{
@@ -41,7 +38,13 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        
+        stage('Scan') {
+            steps {
+                withSonarQubeEnv(installationName: 'Sonarqube') { 
+                    sh './mvnw clean sonar:sonar'
+                }
+            }
+        }
         stage("Deploy"){
             steps {
                 sh 'docker run -p 80:4000 --name customer-experience-analytics 20110665/cae2:1.0'
