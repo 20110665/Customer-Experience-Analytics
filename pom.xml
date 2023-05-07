@@ -21,11 +21,6 @@
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
 		</dependency>
-<<<<<<< HEAD
-		
-=======
-
->>>>>>> 0595868aacc929c1ad8bcab2fe6d76f88a98f41e
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
