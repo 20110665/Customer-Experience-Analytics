@@ -38,10 +38,23 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage('Scan') {
+//         stage('Scan') {
+//             steps {
+//                 withSonarQubeEnv(installationName: 'Sonarqube') { 
+//                     sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+//                 }
+//             }
+//         }
+        stage('SonarQube Scan') {
             steps {
-                withSonarQubeEnv(installationName: 'Sonarqube') { 
-                    sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+                withSonarQubeEnv('SonarQube') {
+                // Run SonarQube Scanner
+                    script {
+                        def scanner = tool 'SonarQubeScanner'
+                        withEnv(["PATH+SONARQUBE_SCANNER=${scanner}/bin"]) {
+                            sh 'sonarScanner'
+                        }
+                    }
                 }
             }
         }
