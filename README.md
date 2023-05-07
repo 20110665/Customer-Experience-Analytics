@@ -34,6 +34,7 @@ Customer Experience Analytics to give actionable insights to your call center te
 ### 2. Config port access of EC2 instance
 - Add Http, https and port 9000 to inbound rule of security group
 #### Add permisson:
+- sudo usermod -aG docker jenkins
 - ls -l /var/run/docker.sock
 - sudo chmod 666 /var/run/docker.sock
 
