@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     tools {
-        // Thêm đường dẫn đến Maven vào môi trường
+        // Thêm đường dẫn đến Maven vào môi trườngg
         maven 'Maven 3.9.1'
     }
     
