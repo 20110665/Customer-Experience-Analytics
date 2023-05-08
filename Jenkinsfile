@@ -21,13 +21,13 @@ pipeline {
                  }
              }
         }
-    stage("Delete old container and image"){
-        steps{
-            sh 'docker stop customer-experience-analytics'
-            sh 'docker rm customer-experience-analytics'
-            sh 'docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}'
-        }
-    }
+//     stage("Delete old container and image"){
+//         steps{
+//             sh 'docker stop customer-experience-analytics'
+//             sh 'docker rm customer-experience-analytics'
+//             sh 'docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}'
+//         }
+//     }
         
         stage('Checkout') {
             steps {
