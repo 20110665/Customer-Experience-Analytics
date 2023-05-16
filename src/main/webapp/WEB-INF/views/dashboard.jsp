@@ -74,6 +74,7 @@
 										<th>Status</th>
 										<th>Agent</th>
 										<th>Contact Numbers</th>
+										<th>Time</th>
 										<th>Duration</th>
 									</tr>
 								</thead>
