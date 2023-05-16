@@ -4,12 +4,11 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
+
 
 import com.google.gson.Gson;
 
@@ -60,12 +59,13 @@ public class HistoryController {
 		return "callhistory";
 	}
 	@GetMapping("/history/{id}")
-	public String showCallhistoryDetail(ModelMap model, @PathVariable("id") Integer id) {
+	public String showCallhistoryDetail(ModelMap model, @PathVariable("id") Integer id) throws Exception {
 		Agent user = (Agent) session.getAttribute("user");
 		if (user == null) {
 			return "redirect:/badRequest";
 		}
-		Optional<CallDetail> optCallDetail = callDetailRepository.findById(id);
+		Optional<CallDetail> optCallDetail = callDetailRepository.findByCallId(id);
+		
 		model.addAttribute("callDetail", optCallDetail.get());
 		return "callhistorydetail";
 	}
@@ -112,8 +112,8 @@ public class HistoryController {
 		return "contact";
 	}
 
-	@GetMapping("/contact/1")
-	public String showContactDetail() {
+	@GetMapping("/contact/{id}")
+	public String showContactDetail(ModelMap model) {
 		return "contactDetail";
 	}
 

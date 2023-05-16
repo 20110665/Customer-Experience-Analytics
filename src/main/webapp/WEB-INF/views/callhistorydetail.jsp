@@ -45,13 +45,5 @@
 			</table>
 		</div>
 	</div>
-	<!--nút sửa-->
-	<div class="btn">
-		<button onclick="window.location.href='/history/1/update'"
-			id="btn-edit">Chỉnh sửa</button>
-	</div>
-	<div class="btn">
-		<button id="btn-delete">Xóa</button>
-	</div>
 </body>
 

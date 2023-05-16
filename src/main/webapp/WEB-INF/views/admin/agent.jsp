@@ -89,7 +89,7 @@
 							<li
 								class="${agentPage.totalPages == agentPage.number + 1 ? 'page-item active' : 'page-item'}">
 								<a class="page-link"
-								href="<c:url value='/admin/agent?page=${categoryPage.totalPages-1}'/>">Last</a>
+								href="<c:url value='/admin/agent?page=${agentPage.totalPages - 1}'/>">Last</a>
 							</li>
 						</ul>
 					</c:if>
@@ -129,9 +129,9 @@
 							<label for="role">Choose level:</label> <select
 								name="role" id="role">
 								<option ${newAgent.role == 1 ? 'selected':'' }
-									value="true">Manager</option>
+									value="1">Manager</option>
 								<option ${newAgent.role == 0 ? 'selected':'' }
-									value="false">Agent</option>
+									value="0">Agent</option>
 							</select>
 						</div>
 						<div class="form-group">
