@@ -2,6 +2,7 @@ package vn.iotstar.entity;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -53,15 +54,15 @@ public class Call {
 	private Date updateAt;
 	
 	//mapping to Call Conversation
-	@OneToOne(mappedBy = "call")
+	@OneToOne(mappedBy = "call", cascade = CascadeType.ALL)
 	private CallConversation callConversation;
 	
 	//mapping to CallDetail
-	@OneToOne(mappedBy = "call")
+	@OneToOne(mappedBy = "call", cascade = CascadeType.ALL)
 	private CallDetail callDetail;
 	
 	//mapping to FeedBackDetail
-	@OneToOne(mappedBy = "call")
+	@OneToOne(mappedBy = "call", cascade = CascadeType.ALL)
 	private FeedBackDetail feedBackDetail;
 
 }

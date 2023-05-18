@@ -43,7 +43,8 @@
 								<td>${agent.phone }</td>
 								<td><c:if test="${agent.role == 1}">Manager</c:if>
 								<c:if test="${agent.role == 0}">Agent</c:if></td>
-								<td>${agent.isActivate }</td>
+								<td><c:if test="${agent.isActivate == false}"><p style="color:red;">No Activate</p></c:if>
+								<c:if test="${agent.isActivate == true}"><p style="color:blue;">Activate</p></c:if></td>
 								<td><a data-id="${agent.id }" data-name="${agent.name }"
 									data-email="${agent.email }" data-address="${agent.address }"
 									data-phone="${agent.phone }"
@@ -157,7 +158,7 @@
 	<div id="editEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form form action=<c:url value = "/admin/agent/saveOrUpdate"/>
+				<form action=<c:url value = "/admin/agent/saveOrUpdate"/>
 					method="POST">
 					<div class="modal-header">
 						<h4 class="modal-title">Edit Agent</h4>
