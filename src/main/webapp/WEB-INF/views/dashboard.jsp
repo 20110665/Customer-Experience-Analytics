@@ -4,6 +4,14 @@
 <%@ include file="/common/taglib.jsp"%>
 
 <body>
+<br>	
+<form action="/report/dashboard">
+		<label for="startDate">Birthday (date and time):</label> <input
+			type="datetime-local" id="startDate" name="startDate"> <br>
+		<br> <label for="birthdaytime">Birthday (date and time):</label>
+		<input type="datetime-local" id="endDate" name="endDate"> <br>
+		<br> <input type="submit">
+	</form>
 	<div id="wraper">
 		<div class="dashboard">
 			<h3 style="font-size: 30px">My Dashboard</h3>

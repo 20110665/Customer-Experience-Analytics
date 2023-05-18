@@ -101,7 +101,7 @@
 	<div id="addEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action=<c:url value = "/admin/call/saveOrUpdate"/>
+				<form action=<c:url value = "/admin/call/add"/>
 					method="POST" enctype="multipart/form-data">
 					<div class="modal-header">
 						<h4 class="modal-title">Add Call</h4>
@@ -110,39 +110,41 @@
 					</div>
 					<div class="modal-body">
 						<div class="form-group">
-							<label for="businessHours">Choose one:</label> <select
+							<label for="businessHours">Business Hours:</label> <select
 								name="businessHours" id="businessHours">
-								<option ${newCall.businessHours == true ? 'selected':'' }
-									value="true">True</option>
-								<option ${newCall.businessHours == false ? 'selected':'' }
-									value="false">False</option>
+								<option value="true">True</option>
+								<option value="false">False</option>
 							</select>
 						</div>
 						<div class="form-group">
 							<label for="callOffer">Call offer:</label> <select
 								name="callOffer" id="callOffer">
-								<option ${newCall.callOffer == true ? 'selected':'' }
-									value="true">True</option>
-								<option ${newCall.callOffer == false ? 'selected':'' }
-									value="false">False</option>
+								<option value="true">True</option>
+								<option value="false">False</option>
 							</select>
 						</div>
 						<div class="form-group">
-							<label for="callResponse">Call Response:</label> <select
+							<label for="callResponse">Call response:</label> <select
 								name="callResponse" id="callResponse">
-								<option ${newCall.callResponse == true ? 'selected':'' }
-									value="true">True</option>
-								<option ${newCall.callResponse == false ? 'selected':'' }
-									value="false">False</option>
+								<option value="true">True</option>
+								<option value="false">False</option>
 							</select>
 						</div>
 						<div class="form-group">
 							<label>Phone</label> <input type="text" class="form-control"
-								name="phone" value="${newCall.phone }" required>
+								name="phone" required>
 						</div>
 						<div class="form-group">
-							<label for="callResponse">Agent:</label> <select
-								name="callResponse" id="callResponse">
+							<label>Time Abandoned</label> <input type="time" name="timeAbandoned" id="timeInput" step="1" required>
+
+						</div>
+						<div class="form-group">
+							<label>Wait Time</label> <input type="time" name="waitTime" id="timeInput" step="1" required>
+
+						</div>
+						<div class="form-group">
+							<label for="agentId">Agent:</label> <select name="agentId"
+								id="agentId">
 								<option value="">--Chose one--</option>
 								<c:forEach items="${agentList}" var="agent">
 									<option value="${agent.id }">${agent.name }</option>
@@ -151,37 +153,24 @@
 						</div>
 						<div class="form-group">
 							<label>Type of Call</label> <input type="text"
-								class="form-control" name="typeCall"
-								value="${newCallDetail.typeCall }" required>
+								class="form-control" name="typeCall" required>
 						</div>
-						<div class="form-group">
-							<label>Time on Queue</label> <input type="time" step="1"
-								class="form-control" name="timeOnQueue"
-								value="${newCallDetail.timeOnQueue }" required>
-						</div>
-						<div class="form-group">
-							<label>Time Abandoned</label> <input type="time" step="1"
-								class="form-control" name="timeAbandoned"
-								value="${newCallDetail.timeAbandoned }" required>
-						</div>
-						<div class="form-group">
-							<label>Wait Time</label> <input type="time" step="1"
-								class="form-control" name="waitTime"
-								value="${newCallDetail.waitTime }" required>
-						</div>
-
 						<div class="form-group">
 							<label>Service Level</label> <input type="number" min="0"
 								step="0.01" max="1" class="form-control" name="serviceLevel"
-								value="${newCallDetail.serviceLevel }" required>
+								required>
 						</div>
 
 						<div class="form-group">
-							<label>Call Content</label> <input type="file" class="form-control" name="callContent"
-								value="${newCallDetail.callContent }" required>
+							<label>Call Content</label> <input type="file"
+								class="form-control" name="callContent" required>
+						</div>
+						<div class="form-group">
+							<label>Feedback Content</label> <input type="text"
+								class="form-control" name="feedBackContent">
 						</div>
 
-						
+
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal"
@@ -196,7 +185,7 @@
 	<div id="editEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form form action=<c:url value = "/admin/agent/saveOrUpdate"/>
+				<form action=<c:url value = "/admin/call/edit"/>
 					method="POST">
 					<div class="modal-header">
 						<h4 class="modal-title">Edit Call</h4>
