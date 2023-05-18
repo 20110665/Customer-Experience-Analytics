@@ -46,7 +46,7 @@
 		</div>
 	</div>
 	<div class="ChartLive2">
-								<canvas id="myChart" width="800" height="220"></canvas>
+								<canvas id="myChart" width="850" height="240"></canvas>
 							</div>
 							<script>
 							

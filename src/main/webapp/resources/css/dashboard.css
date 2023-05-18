@@ -61,6 +61,9 @@
 }
 .tabel-contact-list{
     font-size: 14px;
+    width: 550px;
+    height: 300px;
+    overflow: auto;
 }
 table{
     width: 95%;

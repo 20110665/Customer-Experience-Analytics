@@ -2,115 +2,55 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp"%>
 
-<div class="super_container">
-
-	<!-- Header -->
-
-	<header class="header trans_300">
-
-		<!-- Top Navigation -->
-
-		<div class="top_nav">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="top_nav_left">See how Digital Engagement enables
-							you to meet your customers where they are</div>
-					</div>
-					<div class="col-md-6 text-right">
-						<div class="top_nav_right">
-							<ul class="top_nav_menu">
-
-								<!-- / My Account -->
-								<!-- <li class="account"><a href="#"> My Account <i
-										class="fa fa-angle-down"></i>
-								</a> -->
-								<c:if test="${user == null}">
-									<li class="account"><a href="#" style="width: 110px">
-											Guest <i class="fa fa-angle-down"></i>
-									</a>
-										<ul class="account_selection">
-											<li><a href="/login"><i class="fa fa-sign-in"
-													aria-hidden="true"></i>Đăng nhập</a></li>
-											<li><a href="/register"><i class="fa fa-user-plus"
-													aria-hidden="true"></i>Đăng ký</a></li>
-										</ul>
-								</c:if>
-								<c:if test="${user != null}">
-									<li class="account"><a href="#" style="width: 140px">
-											My Account <i class="fa fa-angle-down"></i>
-									</a>
-										<ul class="account_selection">
-											<li><a href="/user/profile/${user.id }"><i
-													class="fa fa-sign-in" aria-hidden="true"></i>Tài khoản của
-													tôi</a></li>
-											<li><a href="/seller"><i class="fa fa-shopping-bag"
-													aria-hidden="true"></i>Kênh bán hàng</a></li>
-											<li><a href="/user/cart/Order"><i
-													class="fa fa-shopping-cart" aria-hidden="true"></i>Đơn mua</a></li>
-											<li><a href="/user/logout"><i
-													class="fa fa-user-plus" aria-hidden="true"></i>Đăng xuất</a></li>
-										</ul></li>
-								</c:if>
-
-							</ul>
-						</div>
+<div id="headertitle">
+	<h3 class="h3header">See how Digital Engagement enables you to
+		meet your customers where they are.</h3>
+</div>
+<div id="header">
+	<nav class="container">
+		<a href="/" id="logo"><img
+			src="https://prd-cdn-talkdesk.talkdesk.com/cdn-assets/latest/talkdesk/brand/main_brand/logo/talkdesk_logo_purple.svg"
+			alt="Talkdesk" /></a> <u id="main-menu">
+			<li class="active"><a href="/history">CALL HISTORY</a></li>
+			<li><a href="/contact">CONTACT</a></li>
+			<li><a href="/report">REPORT</a></li>
+			<li><a href="/feedback">FEEDBACK</a></li> <c:if
+				test="${user == null }">
+				<div class="dropdown">
+					<button class="dropbtn">Hello<br> Guest</button>
+					<div class="dropdown-content">
+						<a href="/login">Login</a>
+						<a href="/signup">Signup</a>
+						<a href="/forgotPassword">Forgot Password</a>
 					</div>
 				</div>
-			</div>
-		</div>
-
-
-		<!-- Main Navigation -->
-
-		<!-- Main Navigation -->
-
-		<div class="main_nav_container">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 text-right">
-						<div class="logo_container">
-							<a href="/">talkdesk</a>
-						</div>
-						<nav class="navbar">
-							<ul class="navbar_menu">
-								<li><a href="#">Contact</a></li>
-								<li><a href="#">Call History</a></li>
-								<!-- <li><a href="/product/user">promotion</a></li> -->
-								<li><a href="#">Analytics</a></li>
-								<li><a href="#">Feedback Flows</a></li>
-							</ul>
-							<ul class="navbar_user">
-								<!-- <li><a href="#"><i class="fa fa-search"
-										aria-hidden="true"></i></a></li> -->
-								<li><a href="#"><i class="fa fa-user"
-										aria-hidden="true"></i></a></li>
-								<!--Cate -->
-								<%-- <c:if test="${user == null}">
-									<li class="checkout"><a href="/login"> <i
-											class="fa fa-shopping-cart" aria-hidden="true"></i> <span
-											id="checkout_items" class="checkout_items">0</span>
-									</a></li>
-								</c:if>
-								<c:if test="${user != null}">
-									<li class="checkout"><a href="/user/cart/List"> <i
-											class="fa fa-shopping-cart" aria-hidden="true"></i> <span
-											id="checkout_items" class="checkout_items">${count}</span>
-									</a></li>
-								</c:if> --%>
-
-							</ul>
-
-							<div class="hamburger_container">
-								<i class="fa fa-bars" aria-hidden="true"></i>
-							</div>
-						</nav>
+			</c:if> <c:if test="${user != null }">
+				<div class="dropdown">
+					<button class="dropbtn">Hello<br>${user.name}</button>
+					<div class="dropdown-content">
+						<c:if test="${user.role == 1 }"><a href="/admin/agent">Manager Page</a></c:if>
+						<a href="/profile/${user.id }">Profile</a>
+						<a href="/logout">Logout</a>
 					</div>
 				</div>
-			</div>
-		</div>
-
-	</header>
+			</c:if>
+	</nav>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#main-menu li").removeClass("active");
+		$("#main-menu li").click(function() {
+			$("#main-menu li").removeClass("active");
+			$(this).addClass("active");
+
+			let id_tab_content = $(this).children('a').attr('href');
+			// alert(id_tab_content);
+			$('.tab-content-item').hide();
+			$(id_tab_content).fadeIn();
+			return false;
+		});
+	});
+</script>
 

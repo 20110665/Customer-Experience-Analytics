@@ -2,7 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp"%>
 <body>
-	<div class="container rounded bg-white mt-5 mb-5">
+	<div class="format">
+		<div class="container rounded bg-white mt-5 mb-5">
 
 		<form action=<c:url value = "/profile/update"/> method="POST">
 			<input type="hidden" name="id" value="${agent.id }"> <input
@@ -58,4 +59,6 @@
 			</div>
 		</form>
 	</div>
+	</div>
+	
 </body>

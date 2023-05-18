@@ -5,13 +5,31 @@
 <body>
 	<br>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	<form action="/report/live">
+	<!-- <form action="/report/live">
 		<label for="startDate">Birthday (date and time):</label> <input
 			type="datetime-local" id="startDate" name="startDate"> <br>
 		<br> <label for="birthdaytime">Birthday (date and time):</label>
 		<input type="datetime-local" id="endDate" name="endDate"> <br>
 		<br> <input type="submit">
-	</form>
+	</form>-->
+	<div class="container">
+        <form action="/report/live">
+          <div class="listTime">
+            <div class="chooseTime">
+              <label for="startDate">Start Day:</label> 
+              <input class="pickedTime" type="datetime-local" id="startDate" name="startDate">
+            </div>
+            <br>
+            <div class="chooseTime">
+              <label for="birthdaytime">End Day:</label>
+              <input class="pickedTime" type="datetime-local" id="endDate" name="endDate">
+            </div>
+            <br>
+            <input class="Button" type="submit">
+          </div>
+        </form>
+        <br>
+      </div>
 	<div class="Live">
 		<div class="service-list">
 			<div class="service-item">
@@ -57,7 +75,7 @@
                   } = chart;
                   ctx.save();
 
-                  ctx.font = "40px sans-serif";
+                  ctx.font = "30px sans-serif";
                   ctx.textBaseline = "middle";
                   ctx.fillStyle = "black";
                   ctx.textAlign = "center";
