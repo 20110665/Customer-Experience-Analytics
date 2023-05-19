@@ -15,19 +15,24 @@ pipeline {
     
     stages {
         stage("Login to docker"){
-        steps{
+            steps{
              withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                  sh 'echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin'
                  }
              }
         }
-    stage("Delete old container and image"){
-        steps{
-            //sh 'docker stop customer-experience-analytics'
-            //sh 'docker rm customer-experience-analytics'
-            sh 'docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}'
+        stage("Delete old container and image") {
+            steps {
+                script {
+                    def containerExists = sh(script: "docker ps -aq -f name=customer-experience-analytics", returnStatus: true)
+                    if (containerExists == 0) {
+                        sh 'docker stop customer-experience-analytics'
+                        sh 'docker rm customer-experience-analytics'
+                    }
+                    sh 'docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}'
+                }
+            }
         }
-    }
         
         stage('Checkout') {
             steps {
