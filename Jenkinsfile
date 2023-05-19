@@ -15,38 +15,40 @@ pipeline {
     
     stages {
         stage("Login to docker"){
-        steps{
+            steps{
              withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                  sh 'echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin'
                  }
              }
         }
-    stage("Delete old container and image"){
-        steps{
-            sh 'docker stop customer-experience-analytics'
-            sh 'docker rm customer-experience-analytics'
-            sh 'docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}'
-        }
-    }
-        
         stage('Checkout') {
             steps {
                 git url: 'https://github.com/20110665/Customer-Experience-Analytics', branch: 'prod'
             }
         }
-        
         stage('Build') {
             steps {
                 sh 'java -version'
                 sh 'mvn clean install'
             }
         }
-        
+        //test jenkin file
+        stage("Delete old container and image") {
+            steps {
+                script {
+                    def containerExists = sh(script: "docker ps -aq -f name=customer-experience-analytics", returnStatus: true)
+                    if (containerExists != 0) {
+                        sh 'docker stop customer-experience-analytics'
+                        sh 'docker rm customer-experience-analytics'
+                    }
+                    //sh 'docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}'
+                }
+            }
+        }
         stage("Deploy"){
             steps {
                 sh 'docker run -p 80:4000 --name customer-experience-analytics -d 20110665/cae2:1.0'
             }
         }
-        //test jenkin file
     }
 }
