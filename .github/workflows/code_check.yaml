@@ -26,6 +26,6 @@ jobs:
           
       - name: Build and analyze with SonarQube
         uses: sonarsource/sonarcloud-github-action@master
-        with:
-          organization: 20110665
-          token: ${{ secrets.SONAR_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
