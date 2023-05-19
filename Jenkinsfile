@@ -29,7 +29,7 @@ pipeline {
                         sh 'docker stop customer-experience-analytics'
                         sh 'docker rm customer-experience-analytics'
                     }
-                    sh 'docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}'
+                    //sh 'docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}'
                 }
             }
         }
