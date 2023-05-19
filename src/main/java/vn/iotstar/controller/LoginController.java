@@ -75,7 +75,7 @@ public class LoginController {
 		Optional<Agent> optAgent = agentRepository.findByEmail(email);
 
 		if (optAgent.isPresent()) {
-			model.addAttribute("message", "Tài khoản email này đã tồn tại");
+			model.addAttribute("message", "Tài khoản email này đã tồn tại trong hệ thống");
 			return "signup";
 		} else {
 			Agent agent = new Agent();
@@ -87,7 +87,7 @@ public class LoginController {
 			agent.setCreateAt(ts);
 			agentRepository.save(agent);
 
-			return "redirect:/";
+			return "redirect:/login";
 		}
 	}
 

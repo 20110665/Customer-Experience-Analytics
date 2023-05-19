@@ -12,21 +12,24 @@
 			<h1 class="logoenter">Enter your credentials to login</h1>
 			<!-- css logo ở giữa-->
 			<%-- Trong file login.jsp --%>
-			<c:if test="${not empty message}">
-				<div class="alert alert-danger">${message}</div>
-			</c:if>
 		</div>
+		<c:if test="${not empty message}">
+				<div class="alert alert-danger">
+				${message}
+				<span class="close-btn" id="closeAlertBtn">&times;</span>
+				</div>
+			</c:if>
 		<!--khung nhập email và mật khẩu-->
 		<div class="form">
 			<form action="/login" method="post">
 				<label for="email">Email</label> <input type="email" name="email"
-					id="email" placeholder="Email">
+					id="email" placeholder="Email" required>
 				<div class="forgot">
 					<label for="password">Password</label> <a href="#">Forgot
 						password?</a>
 				</div>
 				<input type="password" name="password" id="password"
-					placeholder="Password">
+					placeholder="Password" required>
 				<div class="submit">
 					<button href "/" type="submit">Login</button>
 				</div>
@@ -50,4 +53,12 @@
 		</div>
 	</div>
 
+<script type="text/javascript">
+            const closeAlertBtn = document.getElementById('closeAlertBtn');
+            const alertBox = document.querySelector('.alert');
+
+            closeAlertBtn.addEventListener('click', function() {
+              alertBox.style.display = 'none';
+            });
+        </script>
 </body>
