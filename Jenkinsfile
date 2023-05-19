@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     def containerExists = sh(script: "docker ps -aq -f name=customer-experience-analytics", returnStatus: true)
-                    if (containerExists == 0) {
+                    if (containerExists != 0) {
                         sh 'docker stop customer-experience-analytics'
                         sh 'docker rm customer-experience-analytics'
                     }
