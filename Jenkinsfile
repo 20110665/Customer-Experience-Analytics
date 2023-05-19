@@ -10,6 +10,9 @@ pipeline {
     	DOCKER_IMAGE = "20110665/cae2"
     	DOCKER_TAG = "1.0"
     }
+    
+    
+    
     stages {
         stage("Login to docker"){
             steps{
