@@ -44,15 +44,15 @@ public class LoginController {
 		Optional<Agent> optAgent = agentRepository.findByEmail(email);
 
 		if (optAgent.isEmpty()) {
-			model.addAttribute("message", "Tài khoản không tồn tại trong hệ thống");
+			model.addAttribute("message", "Tài khoản hoặc mật khẩu không chính xác");
 			return "login";
 		} else {
 			if (optAgent.get().getPassword().equals(password)) {
-				// model.addAttribute("message", "Đăng nhập thành công");
+				//model.addAttribute("message", "Đăng nhập thành công");
 				session.setAttribute("user", optAgent.get());
-				return "redirect:/";
+				return "redirect:/";				
 			} else {
-				model.addAttribute("message", "Mật khẩu không chính xác");
+				model.addAttribute("message", "Tài khoản hoặc mật khẩu không chính xác");
 				return "login";
 			}
 		}
