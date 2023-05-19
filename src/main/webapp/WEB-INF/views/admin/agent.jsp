@@ -43,7 +43,8 @@
 								<td>${agent.phone }</td>
 								<td><c:if test="${agent.role == 1}">Manager</c:if>
 								<c:if test="${agent.role == 0}">Agent</c:if></td>
-								<td>${agent.isActivate }</td>
+								<td><c:if test="${agent.isActivate == false}"><p style="color:red;">No Activate</p></c:if>
+								<c:if test="${agent.isActivate == true}"><p style="color:blue;">Activate</p></c:if></td>
 								<td><a data-id="${agent.id }" data-name="${agent.name }"
 									data-email="${agent.email }" data-address="${agent.address }"
 									data-phone="${agent.phone }"
@@ -89,7 +90,7 @@
 							<li
 								class="${agentPage.totalPages == agentPage.number + 1 ? 'page-item active' : 'page-item'}">
 								<a class="page-link"
-								href="<c:url value='/admin/agent?page=${categoryPage.totalPages-1}'/>">Last</a>
+								href="<c:url value='/admin/agent?page=${agentPage.totalPages - 1}'/>">Last</a>
 							</li>
 						</ul>
 					</c:if>
@@ -129,9 +130,9 @@
 							<label for="role">Choose level:</label> <select
 								name="role" id="role">
 								<option ${newAgent.role == 1 ? 'selected':'' }
-									value="true">Manager</option>
+									value="1">Manager</option>
 								<option ${newAgent.role == 0 ? 'selected':'' }
-									value="false">Agent</option>
+									value="0">Agent</option>
 							</select>
 						</div>
 						<div class="form-group">
@@ -157,7 +158,7 @@
 	<div id="editEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form form action=<c:url value = "/admin/agent/saveOrUpdate"/>
+				<form action=<c:url value = "/admin/agent/saveOrUpdate"/>
 					method="POST">
 					<div class="modal-header">
 						<h4 class="modal-title">Edit Agent</h4>

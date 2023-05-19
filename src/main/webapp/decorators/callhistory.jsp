@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="${URL1}css/callhistory.css" />
     <link rel="stylesheet" href="${URL1}css/header.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Call History</title>
 
 <!-- Site meta -->

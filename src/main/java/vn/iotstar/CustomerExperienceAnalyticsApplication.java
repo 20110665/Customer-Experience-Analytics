@@ -1,12 +1,16 @@
 package vn.iotstar;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
-
 @SpringBootApplication
 public class CustomerExperienceAnalyticsApplication {
 
