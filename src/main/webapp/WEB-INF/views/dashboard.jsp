@@ -109,6 +109,9 @@
 											<c:if test="${call.callOffer == true }">
 												<td>Receive</td>
 											</c:if>
+											<c:if test="${call.callOffer == true }">
+												<td>Call</td>
+											</c:if>
 											<c:if test="${call.callResponse == true }">
 												<td>Response</td>
 											</c:if>
