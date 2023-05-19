@@ -38,8 +38,8 @@ pipeline {
                 script {
                     def containerIds = sh(script: "docker ps -aq --filter name=customer-experience-analytics", returnStdout: true).trim()
                     if (!containerIds.isEmpty()) {
-                        sh 'docker stop ${containerIds}'
-                        sh 'docker rm ${containerIds}'
+                        sh 'docker stop customer-experience-analytics'
+                        sh 'docker rm customer-experience-analytics'
                     }
                     //sh 'docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}'
                 }
