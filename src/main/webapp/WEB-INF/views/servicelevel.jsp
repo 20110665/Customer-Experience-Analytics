@@ -2,6 +2,32 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp"%>
 <body>
+<br>	
+	<!--<form action="/report/servicelevel">
+		<label for="startDate">Birthday (date and time):</label> <input
+			type="datetime-local" id="startDate" name="startDate"> <br>
+		<br> <label for="birthdaytime">Birthday (date and time):</label>
+		<input type="datetime-local" id="endDate" name="endDate"> <br>
+		<br> <input type="submit">
+	</form>-->
+
+	<div class="container">
+        <form action="/report/servicelevel">
+          <div class="listTime">
+            <div class="chooseTime">
+              <label for="startDate">Start Day:</label> 
+              <input class="pickedTime" type="datetime-local" id="startDate" name="startDate">
+            </div>
+            <br>
+            <div class="chooseTime">
+              <label for="birthdaytime">End Day:</label>
+              <input class="pickedTime" type="datetime-local" id="endDate" name="endDate">
+            </div>
+            <br>
+            <input class="Button" type="submit">
+          </div>
+        </form>
+      </div>
 	<div id="wraper">
 
 		<br>

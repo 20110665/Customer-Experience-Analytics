@@ -34,7 +34,7 @@ public class CallConversation {
 	@JoinColumn(name = "callId")
 	private Call call;
 	
-	@Column(columnDefinition = "nvarchar(100)")
+	@Column(columnDefinition = "nvarchar(max)")
 	private String conversation;
 	
 	@Temporal(TemporalType.TIMESTAMP)
