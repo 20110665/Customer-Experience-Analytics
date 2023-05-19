@@ -106,7 +106,7 @@
 								<tbody>
 									<c:forEach items="${nowCallList }" var="call">
 										<tr>
-											<c:if test="${call.callOffer == true }">
+											<c:if test="${call.callOffer == false }">
 												<td>Receive</td>
 											</c:if>
 											<c:if test="${call.callOffer == true }">
