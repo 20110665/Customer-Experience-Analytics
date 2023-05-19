@@ -33,13 +33,13 @@ pipeline {
             }
         }
         //test jenkin file
-        stage("Delete old container and image") {
+       stage("Delete old container and image") {
             steps {
                 script {
-                    def containerExists = sh(script: "docker ps -aq -f name=customer-experience-analytics", returnStatus: true)
-                    if (containerExists != 0) {
-                        sh 'docker stop customer-experience-analytics'
-                        sh 'docker rm customer-experience-analytics'
+                    def containerIds = sh(script: "docker ps -aq --filter name=customer-experience-analytics", returnStdout: true).trim()
+                    if (!containerIds.isEmpty()) {
+                        sh 'docker stop ${containerIds}'
+                        sh 'docker rm ${containerIds}'
                     }
                     //sh 'docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}'
                 }
