@@ -21,6 +21,23 @@ pipeline {
                  }
              }
         }
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/20110665/Customer-Experience-Analytics', branch: 'prod'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'java -version'
+                sh 'mvn clean install'
+            }
+        }
+        stage("Deploy"){
+            steps {
+                sh 'docker run -p 80:4000 --name customer-experience-analytics -d 20110665/cae2:1.0'
+            }
+        }
+        //test jenkin file
         stage("Delete old container and image") {
             steps {
                 script {
@@ -33,25 +50,5 @@ pipeline {
                 }
             }
         }
-        
-        stage('Checkout') {
-            steps {
-                git url: 'https://github.com/20110665/Customer-Experience-Analytics', branch: 'prod'
-            }
-        }
-        
-        stage('Build') {
-            steps {
-                sh 'java -version'
-                sh 'mvn clean install'
-            }
-        }
-        
-        stage("Deploy"){
-            steps {
-                sh 'docker run -p 80:4000 --name customer-experience-analytics -d 20110665/cae2:1.0'
-            }
-        }
-        //test jenkin file
     }
 }
