@@ -32,11 +32,6 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage("Deploy"){
-            steps {
-                sh 'docker run -p 80:4000 --name customer-experience-analytics -d 20110665/cae2:1.0'
-            }
-        }
         //test jenkin file
         stage("Delete old container and image") {
             steps {
@@ -48,6 +43,11 @@ pipeline {
                     }
                     //sh 'docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}'
                 }
+            }
+        }
+        stage("Deploy"){
+            steps {
+                sh 'docker run -p 80:4000 --name customer-experience-analytics -d 20110665/cae2:1.0'
             }
         }
     }
