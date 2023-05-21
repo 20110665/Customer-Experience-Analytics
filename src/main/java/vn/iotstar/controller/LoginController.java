@@ -94,7 +94,7 @@ public class LoginController {
 	@GetMapping(path = "/profile/{id}")
 	public String profilePage(ModelMap model, @PathVariable("id") Integer id) {
 		Agent user = (Agent) session.getAttribute("user");
-		if (user == null || user.getRole() != 1) {
+		if (user == null) {
 			return "redirect:/badRequest";
 		}
 		Optional<Agent> optAgent = agentRepository.findById(id);
