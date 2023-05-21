@@ -43,33 +43,41 @@
 <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
-
 		var currentUrl = window.location.href;
 		var url = new URL(currentUrl);
+		
 		var path = url.pathname;
 		var textUrl = '';
-
 		$('#main-menu li a').each(function() {
 			if ($(this).attr('href') === path) {
 				textUrl = $(this).text().trim();
+				console.log("20110263c: ", textUrl);
 				return false; // Dừng vòng lặp nếu tìm thấy mục
 			}
 		});
-
-		// Lấy mục đang được chọn từ URL hoặc cách khác
-		var activeMenuItem = textUrl; // Thay đổi giá trị tùy theo mục đang được chọn
-
-		// Tìm mục đang được chọn trong menu và thêm lớp 'active'
+		var activeMenuItem = textUrl;
+		
+		
+		var path2 = "/"+ url.pathname.split('/')[1];
+		var textUrl2 = '';
+		$('#main-menu li a').each(function() {
+			if ($(this).attr('href') === path2) {
+				textUrl2 = $(this).text().trim();
+				console.log("20110263b: ", textUrl2);
+				return false; // Dừng vòng lặp nếu tìm thấy mục
+			}
+		});
+		var activeMenuItem2 = textUrl2;
+		
 		var menuItems = document.querySelectorAll('#main-menu li');
 		menuItems.forEach(function(item) {
-			var menuItemText = item.querySelector('a').textContent.trim();
-			if (menuItemText === activeMenuItem) {
+			var menuItemText = item.querySelector('a').textContent.trim();	
+			if (menuItemText === activeMenuItem || menuItemText === activeMenuItem2) {
 				item.classList.add('active');
 			} else {
 				item.classList.remove('active');
 			}
 		});
-
 	});
 </script>
 
