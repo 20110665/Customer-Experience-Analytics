@@ -6,9 +6,13 @@
     <div class="header">
         <h1>Sign up to <a href="/">Talkdesk</a>, Inc.</h1>
     </div>
+    <c:if test="${not empty message}">
+				<div class="alert alert-danger">
+				${message}
+				<span class="close-btn" id="closeAlertBtn">&times;</span>
+				</div>
+			</c:if>
     <div class="container">
-        
-
         <div class="form">
             <form action="" method="post">
                 <label for="fullname">Full Name</label>
@@ -75,6 +79,13 @@
               } else {
                 phoneNumberInput.setCustomValidity('');
               }
+            });
+            
+            const closeAlertBtn = document.getElementById('closeAlertBtn');
+            const alertBox = document.querySelector('.alert');
+
+            closeAlertBtn.addEventListener('click', function() {
+              alertBox.style.display = 'none';
             });
         </script>
         
