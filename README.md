@@ -2,6 +2,7 @@
 Customer Experience Analytics to give actionable insights to your call center team.
 
 ## Step to run on AWS:
+Full of Instruction: https://github.com/20110665/Customer-Experience-Analytics/blob/production/Nhom12_ChieuThu2_Instruction.docx
 ### 1. Create EC2 Instance and install docker, git, jdk 17 and Jenkins
 
 1.1. Install Docker:
