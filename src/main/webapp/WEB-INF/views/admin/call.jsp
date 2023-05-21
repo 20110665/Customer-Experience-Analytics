@@ -163,7 +163,7 @@
 
 						<div class="form-group">
 							<label>Call Content</label> <input type="file"
-								class="form-control" name="callContent" required>
+								class="form-control" name="callContent" accept=".mp3,.mp4" maxlength="104857600" required>
 						</div>
 						<div class="form-group">
 							<label>Feedback Content</label> <input type="text"
