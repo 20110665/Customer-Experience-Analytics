@@ -10,6 +10,8 @@
 				type="hidden" name="password" value="${agent.password }">
 				<input
 				type="hidden" name="role" value="${agent.role }">
+				<input
+				type="hidden" name="role" value="${agent.isActivate }">
 			<div class="col-md-5 border-right">
 				<div class="p-3 py-5">
 					<div class="d-flex justify-content-between align-items-center mb-3">
