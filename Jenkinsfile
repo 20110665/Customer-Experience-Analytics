@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/20110665/Customer-Experience-Analytics', branch: 'prod'
+                git url: 'https://github.com/20110665/Customer-Experience-Analytics', branch: 'production'
             }
         }
         stage('Build') {
@@ -33,6 +33,7 @@ pipeline {
             }
         }
         //test jenkin file
+        //test sonarcloud and jenkins
        stage("Delete old container and image") {
             steps {
                 script {
