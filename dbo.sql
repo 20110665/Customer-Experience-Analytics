@@ -334,7 +334,7 @@ GO
 
 CREATE TABLE [dbo].[call_conversation] (
   [id] int  IDENTITY(1,1) NOT NULL,
-  [conversation] nvarchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
+  [conversation] nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
   [create_at] datetime2(7)  NULL,
   [update_at] datetime2(7)  NULL,
   [call_id] int  NULL
