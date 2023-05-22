@@ -1,10 +1,10 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : AWS-20110263
+ Source Server         : 20110720
  Source Server Type    : SQL Server
  Source Server Version : 15004236
- Source Host           : cosmeticshopdb.cmitqpwwpolm.us-east-1.rds.amazonaws.com:1433
+ Source Host           : stae.cz3kyommimj6.us-east-1.rds.amazonaws.com:1433
  Source Catalog        : CustomerExperienceAnalytics
  Source Schema         : dbo
 
@@ -12,7 +12,7 @@
  Target Server Version : 15004236
  File Encoding         : 65001
 
- Date: 16/05/2023 01:06:23
+ Date: 22/05/2023 19:10:19
 */
 
 
@@ -48,7 +48,7 @@ GO
 SET IDENTITY_INSERT [dbo].[agent] ON
 GO
 
-INSERT INTO [dbo].[agent] ([id], [address], [create_at], [dob], [email], [name], [phone], [role], [update_at], [password], [is_activate]) VALUES (N'1', N'761 North Michigan Ave', NULL, N'2001-04-09', N'brenhernandez215@gmail.com', N'Brenda Hernandez', N'312-607-3189', N'1', NULL, N'XHh9X139h2', NULL)
+INSERT INTO [dbo].[agent] ([id], [address], [create_at], [dob], [email], [name], [phone], [role], [update_at], [password], [is_activate]) VALUES (N'1', N'761 North Michigan Ave', NULL, N'2001-04-09', N'brenhernandez215@gmail.com', N'Brenda Hernandez', N'312-607-3189', N'1', NULL, N'XHh9X139h2', N'1')
 GO
 
 INSERT INTO [dbo].[agent] ([id], [address], [create_at], [dob], [email], [name], [phone], [role], [update_at], [password], [is_activate]) VALUES (N'2', N'43 Yueliu Rd, Fangshan District', N'2001-03-30 12:54:54.0000000', N'2003-06-18', N'swaiyee@gmail.com', N'Siu Wai Yee', N'10-4767-1048', N'0', N'2012-09-02 17:33:11.0000000', N'JIxyA6Uayw', N'0')
@@ -193,6 +193,9 @@ INSERT INTO [dbo].[agent] ([id], [address], [create_at], [dob], [email], [name],
 GO
 
 INSERT INTO [dbo].[agent] ([id], [address], [create_at], [dob], [email], [name], [phone], [role], [update_at], [password], [is_activate]) VALUES (N'1010', NULL, N'2023-05-08 11:46:20.4500000', NULL, N'a@student.hcmute.edu.vn', NULL, NULL, NULL, NULL, N'123', NULL)
+GO
+
+INSERT INTO [dbo].[agent] ([id], [address], [create_at], [dob], [email], [name], [phone], [role], [update_at], [password], [is_activate]) VALUES (N'1011', NULL, N'2023-05-22 11:40:22.2950000', NULL, N'thien6523@gmail.com', NULL, NULL, NULL, NULL, N'thien6523', NULL)
 GO
 
 SET IDENTITY_INSERT [dbo].[agent] OFF
@@ -346,6 +349,96 @@ GO
 -- Records of call_conversation
 -- ----------------------------
 SET IDENTITY_INSERT [dbo].[call_conversation] ON
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'1', N'Navicat is a multi-connections Database Administration tool allowing y', N'2006-04-02 08:01:36.0000000', N'2017-12-04 07:48:23.0000000', N'1')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'2', N'Typically, it is employed as an encrypted version of Telnet. Anyone wh', N'2009-06-15 17:06:12.0000000', N'2013-09-25 22:35:39.0000000', N'2')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'3', N'There is no way to happiness. Happiness is the way. The past has no po', N'2022-03-27 05:09:16.0000000', N'2001-05-19 15:54:53.0000000', N'3')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'4', N'SQL Editor allows you to create and edit SQL text, prepare and execute', N'2018-06-14 14:05:23.0000000', N'2005-10-15 06:09:28.0000000', N'4')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'5', N'In the Objects tab, you can use the List List, Detail Detail and ER Di', N'2010-07-10 13:55:07.0000000', N'2009-10-17 02:00:17.0000000', N'5')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'6', N'How we spend our days is, of course, how we spend our lives.', N'2019-06-26 19:57:56.0000000', N'2014-07-13 02:12:35.0000000', N'6')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'7', N'Navicat is a multi-connections Database Administration tool allowing y', N'2015-04-05 11:49:47.0000000', N'2000-05-11 04:09:29.0000000', N'7')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'8', N'The reason why a great man is great is that he resolves to be a great ', N'2015-04-02 23:10:15.0000000', N'2021-07-30 21:24:00.0000000', N'8')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'9', N'Secure SHell (SSH) is a program to log in into another computer over a', N'2010-09-26 10:38:07.0000000', N'2018-08-25 12:01:55.0000000', N'9')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'10', N'All journeys have secret destinations of which the traveler is unaware', N'2005-08-09 02:51:56.0000000', N'2014-02-14 04:34:44.0000000', N'10')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'11', N'Navicat Monitor is a safe, simple and agentless remote server monitori', N'2019-07-27 02:50:33.0000000', N'2009-04-18 09:53:29.0000000', N'11')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'12', N'You will succeed because most people are lazy. Navicat provides powerf', N'2014-11-22 19:37:02.0000000', N'2006-07-14 09:39:41.0000000', N'12')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'13', N'With its well-designed Graphical User Interface(GUI), Navicat lets you', N'2018-04-22 13:52:17.0000000', N'2000-10-27 23:45:31.0000000', N'13')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'14', N'All journeys have secret destinations of which the traveler is unaware', N'2000-08-12 11:29:05.0000000', N'2020-02-15 17:06:20.0000000', N'14')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'15', N'To open a query using an external editor, control-click it and select ', N'2020-09-08 05:40:09.0000000', N'2011-09-14 02:34:01.0000000', N'15')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'16', N'All the Navicat Cloud objects are located under different projects. Yo', N'2012-08-11 04:53:10.0000000', N'2023-03-13 14:19:38.0000000', N'16')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'17', N'You will succeed because most people are lazy. SSH serves to prevent s', N'2009-03-07 03:59:57.0000000', N'2014-11-16 09:26:44.0000000', N'17')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'18', N'Navicat authorizes you to make connection to remote servers running on', N'2001-06-15 13:24:20.0000000', N'2013-10-20 21:03:19.0000000', N'18')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'19', N'With its well-designed Graphical User Interface(GUI), Navicat lets you', N'2018-01-01 17:08:27.0000000', N'2006-07-28 18:07:28.0000000', N'19')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'20', N'The past has no power over the present moment. It collects process met', N'2010-10-06 21:11:42.0000000', N'2016-04-19 16:35:15.0000000', N'20')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'21', N'In a Telnet session, all communications, including username and passwo', N'2012-11-21 17:33:06.0000000', N'2009-04-30 23:39:59.0000000', N'21')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'22', N'How we spend our days is, of course, how we spend our lives. In the Ob', N'2014-01-23 10:37:33.0000000', N'2011-04-28 23:37:36.0000000', N'22')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'23', N'The Synchronize to Database function will give you a full picture of a', N'2018-01-21 16:21:55.0000000', N'2001-07-01 16:49:29.0000000', N'23')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'24', N'To get a secure connection, the first thing you need to do is to insta', N'2019-08-25 15:14:07.0000000', N'2000-04-03 02:00:00.0000000', N'24')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'25', N'Navicat Monitor can be installed on any local computer or virtual mach', N'2010-04-02 01:50:11.0000000', N'2004-01-16 09:32:35.0000000', N'25')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'26', N'If the Show objects under schema in navigation pane option is checked ', N'2016-02-21 19:15:24.0000000', N'2008-08-28 08:13:51.0000000', N'26')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'27', N'Export Wizard allows you to export data from tables, collections, view', N'2023-02-06 09:43:58.0000000', N'2001-07-24 20:51:12.0000000', N'27')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'28', N'If opportunity doesn’t knock, build a door. With its well-designed G', N'2002-04-02 10:22:06.0000000', N'2015-05-31 02:51:26.0000000', N'28')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'29', N'If your Internet Service Provider (ISP) does not provide direct access', N'2018-01-17 17:25:53.0000000', N'2015-07-09 04:28:28.0000000', N'29')
+GO
+
+INSERT INTO [dbo].[call_conversation] ([id], [conversation], [create_at], [update_at], [call_id]) VALUES (N'30', N'In the middle of winter I at last discovered that there was in me an i', N'2008-12-15 16:46:14.0000000', N'2007-01-11 09:47:29.0000000', N'30')
 GO
 
 SET IDENTITY_INSERT [dbo].[call_conversation] OFF
@@ -876,7 +969,7 @@ GO
 -- ----------------------------
 -- Auto increment value for agent
 -- ----------------------------
-DBCC CHECKIDENT ('[dbo].[agent]', RESEED, 1010)
+DBCC CHECKIDENT ('[dbo].[agent]', RESEED, 1012)
 GO
 
 
@@ -892,7 +985,7 @@ GO
 -- ----------------------------
 -- Auto increment value for call
 -- ----------------------------
-DBCC CHECKIDENT ('[dbo].[call]', RESEED, 200)
+DBCC CHECKIDENT ('[dbo].[call]', RESEED, 202)
 GO
 
 
@@ -908,7 +1001,7 @@ GO
 -- ----------------------------
 -- Auto increment value for call_conversation
 -- ----------------------------
-DBCC CHECKIDENT ('[dbo].[call_conversation]', RESEED, 1)
+DBCC CHECKIDENT ('[dbo].[call_conversation]', RESEED, 1002)
 GO
 
 
@@ -924,7 +1017,7 @@ GO
 -- ----------------------------
 -- Auto increment value for call_detail
 -- ----------------------------
-DBCC CHECKIDENT ('[dbo].[call_detail]', RESEED, 1204)
+DBCC CHECKIDENT ('[dbo].[call_detail]', RESEED, 1206)
 GO
 
 
@@ -940,7 +1033,7 @@ GO
 -- ----------------------------
 -- Auto increment value for customer
 -- ----------------------------
-DBCC CHECKIDENT ('[dbo].[customer]', RESEED, 101)
+DBCC CHECKIDENT ('[dbo].[customer]', RESEED, 102)
 GO
 
 
