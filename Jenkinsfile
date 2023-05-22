@@ -33,6 +33,7 @@ pipeline {
             }
         }
         //test jenkin file
+        //test sonarcloud and jenkins
        stage("Delete old container and image") {
             steps {
                 script {
